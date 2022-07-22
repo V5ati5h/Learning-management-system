@@ -1,0 +1,683 @@
+﻿:root {
+    --primary: #0d6efd;
+    --primaryLite: #69a4fa;
+    --light: #F0FBFC;
+    --dark: #181d38;
+}
+
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+/*** Button ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+
+/* kuch bhi */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background: #f0f0f0;
+}
+
+header {
+    display: none;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav .navlist {
+    background: white;
+    box-shadow: 0px 0px 4px lightgray;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    width: 6rem;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+}
+
+    .nav .navlist .navitem {
+        list-style: none;
+        font-size: 0.7rem;
+        text-align: center;
+        transition: all 200ms ease-in;
+    }
+
+#ana {
+    transition: all 200ms ease-in;
+    text-decoration: none;
+}
+
+    #ana:hover {
+        font-size: 14px;
+        transition: all 200ms ease-in;
+    }
+
+#iconh {
+    color: var(--primary);
+    text-decoration: bold;
+}
+
+    #iconh:hover {
+        color: var(--primaryLite);
+        transition: all 200ms ease-in;
+    }
+
+.gcardcard {
+    background-color: #ffffff;
+    margin: 0.5rem;
+    border-radius: 0.8rem;
+    padding: 0.6rem;
+    box-shadow: 0rem 0.05rem 0.1rem lightgray;
+}
+
+.cardholder {
+    display: flex;
+    font-weight: 800;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0.5rem;
+    margin-left: 6.5rem;
+}
+
+    .cardholder > * {
+        flex: 1 1 15rem;
+    }
+
+    .cardholder .hcard {
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-image: linear-gradient(to bottom right,var(--primary),var(--primaryLite));
+        box-shadow: 0rem 0.1rem 0.2rem lightgray;
+    }
+
+        .cardholder .hcard .cardkadata {
+            flex-direction: column;
+            margin: 2rem;
+            margin-left: 0.8rem;
+            align-items: center;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+#cardicon {
+    color: rgb(255, 255, 255);
+    font-size: 2.9rem;
+    margin: 1rem;
+}
+
+#ihm {
+    color: #f0f0f0;
+}
+
+#ihm1 {
+    color: #f0f0f0;
+    font-size: large;
+}
+
+.project {
+    padding: 1rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    margin: 1rem;
+    margin-top: 0;
+    flex-basis: 2rem;
+}
+
+.splist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .splist > * {
+        flex: 1 1 15rem;
+    }
+
+.sprojectcard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.4rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0.1rem 0.2rem lightgray;
+}
+
+.yemlo {
+    margin-left: 6.2rem;
+    display: flex;
+    font-weight: 800;
+    font-size: 12px;
+    align-items: top;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .yemlo > * {
+        flex: 1 1 10rem;
+    }
+
+.rproject {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: left;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.4rem;
+    flex-basis: 72rem;
+}
+
+.plist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .plist > * {
+        flex: 1 1 15rem;
+    }
+
+.pimg {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+}
+
+#pcard {
+    color: var(--primaryLite);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#hproject {
+    color: #000000;
+}
+
+#cproject {
+    color: var(--primaryLite);
+}
+
+.gcard {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    flex-basis: 20rem;
+    margin: 0.5rem;
+    box-shadow: 0rem 0.1rem 0.2rem lightgray;
+}
+
+.gcardimg {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.activekonhai {
+    margin: 1rem;
+}
+
+.activwlogkacard {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.actiimg {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50rem;
+    vertical-align: middle;
+    border: 2px solid var(--primary);
+}
+
+#activehaikya {
+    color: #fcb430;
+}
+
+.news {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    margin: 1rem;
+    box-shadow: 0rem 0.1rem 0.2rem lightgray;
+}
+
+.newscard {
+    background-color: var(--primaryLite);
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    margin: 0.4rem;
+    box-shadow: 0rem 0.1rem 0.2rem lightgray;
+}
+
+#noticon {
+    color: var(--primaryLite);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#gridt {
+    margin-left: 1rem;
+}
+
+#sactuv {
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+#hidein {
+    display: none;
+}
+
+.hidein {
+    border-radius: 1rem;
+    flex-direction: column;
+    flex-basis: 20rem;
+    margin: 0.5rem;
+}
+
+.hidecard {
+    background-color: #ffffff;
+    color: var(--primaryLite);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 0.8rem;
+    margin: 0.4rem;
+    box-shadow: 0rem 0.1rem 0.2rem lightgray;
+}
+
+#hideicon {
+    color: #ffffff;
+    background-color: var(--primaryLite);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.staff {
+    margin-left: 6.2rem;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .staff > * {
+        flex: 1 1 30rem;
+    }
+
+.staffcard {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.staffimgcom {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 1rem;
+    margin-bottom: -5px;
+}
+
+.staffimg {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50rem;
+    vertical-align: middle;
+    border: 4px solid var(--primary);
+}
+
+.stafflin {
+    display: flex;
+    background-color: var(--primaryLite);
+    border-radius: 0rem 0rem 1rem 1rem;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+#scicon {
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+#snaam {
+    font-size: 25px;
+}
+
+#spaad {
+    font-size: 15px;
+    color: #fcb430;
+}
+
+#shai {
+    font-size: x-small;
+    color: green;
+}
+
+.setting {
+    margin-left: 6.2rem;
+    display: flex;
+    font-weight: 800;
+    font-size: 12px;
+    align-items: top;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .setting > * {
+        flex: 1 1 40rem;
+    }
+
+.Dform {
+    margin: 0.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    box-shadow: 0rem 0.1rem 0.2rem lightgray;
+}
+
+#DIcn {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+#editbtn {
+    position: absolute;
+    left: 95%;
+    top: 10px;
+    font-weight: 500;
+    font-size: 25px;
+    color: #d47222;
+}
+
+    #editbtn:hover {
+        color: var(--primary);
+    }
+
+.dparagraph {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.userd {
+    display: flex;
+    font-weight: 800;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .userd > * {
+        flex: 1 1 40rem;
+    }
+
+.FormInGr {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 0.8rem;
+}
+
+.DFInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--primary);
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+}
+
+    .DFInput:hover {
+        border-color: #d47222;
+    }
+
+    .DFInput:focus {
+        border-color: var(--primaryLite);
+    }
+
+.DFLabl {
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    padding: 0 0.5rem;
+    color: #d47222;
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: white;
+}
+
+.DFInput:focus ~ .DFLabl,
+.DFInput:not(:placeholder-shown).DFInput:not(:focus) ~ .DFLabl {
+    top: -0.5rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+}
+
+.fbutton {
+    margin: 1rem;
+    padding: 0.6rem;
+    background-color: #d47222;
+    border: 0;
+    border-radius: 0.5rem;
+    font-weight: 1000;
+    color: white;
+}
+
+#diactivebtn {
+    background-color: #fcb430;
+    margin-bottom: 0.5rem;
+    margin-top: 00.5rem;
+}
+
+#delbtn {
+    background-color: #fa4444;
+    margin-bottom: 0.5rem;
+    margin-top: 00.5rem;
+}
+
+@media screen and (max-width: 990px) {
+    header {
+        display: flex;
+        background-color: #ffffff;
+        padding: 0.2rem;
+        align-items: center;
+        justify-content: left;
+        flex-direction: row;
+    }
+
+    .avatar {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border-color: var(--primaryLite);
+        margin: 0.5rem;
+        margin-left: 1rem;
+    }
+
+    .nav .navlist {
+        background: #ffffff;
+        width: 100%;
+        height: 5rem;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden;
+        z-index: 1;
+        top: auto;
+        bottom: 0;
+        margin-bottom:0px;
+    }
+
+    #umm {
+        display: none;
+        width: 0;
+    }
+
+    #sactuv {
+        margin: 1rem;
+        margin-top: -8px;
+        margin-bottom: 0.5rem;
+    }
+
+    .cardholder {
+        display: flex;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin: 1rem;
+        margin-bottom: 00.4rem;
+    }
+
+        .cardholder .hcard {
+            flex-direction: column;
+            margin: 0;
+        }
+
+            .cardholder .hcard .cardkadata {
+                flex-direction: column;
+                margin: 0;
+                font-size: small;
+                text-align: center;
+            }
+
+    #cardicon {
+        margin: 0;
+    }
+
+    #ihm1 {
+        font-size: 0.6rem;
+    }
+
+    .yemlo {
+        margin: 0;
+        margin-bottom: 6rem;
+        gap: 1rem;
+    }
+
+    .staff {
+        margin: 0;
+        margin-bottom: 6rem;
+        gap: 0.1rem;
+    }
+
+    .rproject {
+        margin: 1rem;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .plist > * {
+        flex: 1 1 12rem;
+    }
+
+    .gcard {
+        margin: 1rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    #hidein {
+        display: block;
+        margin-top: -1rem;
+    }
+
+    .setting {
+        margin: 1rem;
+        margin-bottom: 6rem;
+    }
+
+    .userd > * {
+        flex: 1 1 20rem;
+    }
+
+    #editbtn {
+        left: 93%;
+    }
+}
