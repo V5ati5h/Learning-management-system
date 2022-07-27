@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace LSM
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class WebForm7 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnLg_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("studentLogin.aspx");
         }
     }
 }

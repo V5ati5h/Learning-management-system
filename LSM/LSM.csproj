@@ -2167,27 +2167,42 @@
     <Content Include="lib\waypoints\waypoints.min.js" />
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
-    <Content Include="login.aspx" />
+    <Content Include="studentLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
     <Content Include="about.aspx" />
     <Content Include="contact.aspx" />
-    <Content Include="default2.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="notice.aspx" />
+    <Content Include="examination.aspx" />
+    <Content Include="fees.aspx" />
+    <Content Include="homework.aspx" />
+    <Content Include="defaultSuperAdmin.aspx" />
+    <Content Include="superAdminDashbord.aspx" />
+    <Content Include="addFacultyMain.aspx" />
+    <Content Include="superAdminRegester.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SDashboard.Master.cs">
-      <DependentUpon>SDashboard.Master</DependentUpon>
+    <Compile Include="SuperAdmin.Master.cs">
+      <DependentUpon>SuperAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SDashboard.Master.designer.cs">
-      <DependentUpon>SDashboard.Master</DependentUpon>
+    <Compile Include="SuperAdmin.Master.designer.cs">
+      <DependentUpon>SuperAdmin.Master</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="StudentDashboard.Master.cs">
+      <DependentUpon>StudentDashboard.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="StudentDashboard.Master.designer.cs">
+      <DependentUpon>StudentDashboard.Master</DependentUpon>
+    </Compile>
+    <Compile Include="studentLogin.aspx.cs">
+      <DependentUpon>studentLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentLogin.aspx.designer.cs">
+      <DependentUpon>studentLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.Master.cs">
@@ -2218,12 +2233,68 @@
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="default2.aspx.cs">
-      <DependentUpon>default2.aspx</DependentUpon>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default2.aspx.designer.cs">
-      <DependentUpon>default2.aspx</DependentUpon>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice.aspx.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice.aspx.designer.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examination.aspx.cs">
+      <DependentUpon>examination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="examination.aspx.designer.cs">
+      <DependentUpon>examination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fees.aspx.cs">
+      <DependentUpon>fees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fees.aspx.designer.cs">
+      <DependentUpon>fees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homework.aspx.cs">
+      <DependentUpon>homework.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homework.aspx.designer.cs">
+      <DependentUpon>homework.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="defaultSuperAdmin.aspx.cs">
+      <DependentUpon>defaultSuperAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="defaultSuperAdmin.aspx.designer.cs">
+      <DependentUpon>defaultSuperAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superAdminDashbord.aspx.cs">
+      <DependentUpon>superAdminDashbord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superAdminDashbord.aspx.designer.cs">
+      <DependentUpon>superAdminDashbord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addFacultyMain.aspx.cs">
+      <DependentUpon>addFacultyMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addFacultyMain.aspx.designer.cs">
+      <DependentUpon>addFacultyMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superAdminRegester.aspx.cs">
+      <DependentUpon>superAdminRegester.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superAdminRegester.aspx.designer.cs">
+      <DependentUpon>superAdminRegester.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2305,9 +2376,10 @@
     <Content Include="materialIcons\MaterialIconsRound-Regular.otf" />
     <Content Include="materialIcons\MaterialIconsSharp-Regular.otf" />
     <Content Include="materialIcons\MaterialIconsTwoTone-Regular.otf" />
-    <Content Include="SDashboard.Master" />
+    <Content Include="StudentDashboard.Master" />
     <None Include="packages.config" />
     <Content Include="Main.Master" />
+    <Content Include="SuperAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

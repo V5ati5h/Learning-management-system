@@ -25,7 +25,7 @@
         <div class="container">
             <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
               <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                  <img src="img/icon.png" alt="" width="30" height="30" class="d-inline-block align-text-top me-1"><b>LSM</b>
+                  <img src="img/icon.png" alt="" width="30" height="30" class="d-inline-block align-text-top me-1"><b>LMS</b>
               </a>
               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="default.aspx" class="nav-link px-2 link-secondary">Home</a></li>
@@ -34,9 +34,7 @@
               </ul>
         
               <div class="col-md-3 text-end">
-                <a href="login.aspx"
-                <button type="button" class="btn btn-primary">Login</button>
-                </a>
+                <asp:Button type="button" CssClass="btn btn-primary" ID="Button1" runat="server" Text="Login" OnClick="btnLg_Click"></asp:Button>
               </div>
             </nav>
         </div>
