@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace LSM
 {
-    public partial class WebForm9 : System.Web.UI.Page
+    public partial class WebForm14 : System.Web.UI.Page
     {
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
@@ -22,9 +22,9 @@ namespace LSM
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("select * from Tbl_Admin where Username = @Username and password = @password", conn);
-                cmd.Parameters.AddWithValue("@Username", txtadminlogusername.Text);
-                cmd.Parameters.AddWithValue("@password", txtadminlogpassword.Text);
+                SqlCommand cmd = new SqlCommand("select * from Tbl_Faculty where Username = @Username and password = @password", conn);
+                cmd.Parameters.AddWithValue("@Username", txtlogusername.Text);
+                cmd.Parameters.AddWithValue("@password", txtlogpassword.Text);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -33,7 +33,7 @@ namespace LSM
                 conn.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    Session["id"] = txtadminlogusername.Text;
+                    Session["id"] = txtlogusername.Text;
                     Response.Redirect("teacherDashbord.aspx");
                     Session.RemoveAll();
                 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
+using System.IO;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace LSM
 {
@@ -51,6 +52,11 @@ namespace LSM
                 libmsg.Visible = true;
                 libmsg.Text = ex.Message;
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("uploadBulkFaculty.aspx");
         }
     }
 }

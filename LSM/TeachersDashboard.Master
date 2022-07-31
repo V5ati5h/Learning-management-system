@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SuperAdmin.Master.cs" Inherits="LSM.SAdmin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TeachersDashboard.master.cs" Inherits="LSM.TeachersDashboard" %>
 
 <!DOCTYPE html>
 
@@ -11,8 +11,6 @@
     <link href="fontawsome/css/all.min.css" rel="stylesheet" />
     <link href="css/sstyle.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-    </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -22,7 +20,7 @@
         <header>
             <img src="img/avatar.png" class="avatarIcon">
             <label class="card-body display-7 fw-bold ls-tight">
-                Good morning,<br /><span class="text-danger" id="iconh"> Student</span>
+                Good morning,<br /><span class="text-success"> Student</span>
             </label>
         </header>
         <navbar class="nav">
@@ -33,13 +31,13 @@
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="superAdminDashbord.aspx" id="ana">
+                    <a href="teacherDashboard.aspx" id="ana">
                         <i class="fa-solid fa-house" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Home</p>
                     </a>
                 </li>
                 <li class="navitem" id="umm">
-                    <a href="default.aspx" id="ana">
+                    <a href="default3.aspx" id="ana">
                         <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Log out</p>
                     </a>
@@ -49,9 +47,9 @@
 
         <section class="holderMain">
             <div class="container-fluid p-3 gap-1">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </section>
     </form>
     <script src="bootstrap/js/jquery-3.6.0.min.js"></script>

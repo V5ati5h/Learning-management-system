@@ -2181,6 +2181,9 @@
     <Content Include="superAdminDashbord.aspx" />
     <Content Include="addFacultyMain.aspx" />
     <Content Include="superAdminRegester.aspx" />
+    <Content Include="uploadBulkFaculty.aspx" />
+    <Content Include="defaultTeacher.aspx" />
+    <Content Include="teacherDashbord.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SuperAdmin.Master.cs">
@@ -2296,6 +2299,34 @@
     <Compile Include="superAdminRegester.aspx.designer.cs">
       <DependentUpon>superAdminRegester.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TeachersDashboard.Master.cs">
+      <DependentUpon>TeachersDashboard.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachersDashboard.Master.designer.cs">
+      <DependentUpon>TeachersDashboard.Master</DependentUpon>
+    </Compile>
+    <Compile Include="uploadBulkFaculty.aspx.cs">
+      <DependentUpon>uploadBulkFaculty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadBulkFaculty.aspx.designer.cs">
+      <DependentUpon>uploadBulkFaculty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="defaultTeacher.aspx.cs">
+      <DependentUpon>defaultTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="defaultTeacher.aspx.designer.cs">
+      <DependentUpon>defaultTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacherDashbord.aspx.cs">
+      <DependentUpon>teacherDashbord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacherDashbord.aspx.designer.cs">
+      <DependentUpon>teacherDashbord.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fontawsome\less\brands.less" />
@@ -2380,6 +2411,7 @@
     <None Include="packages.config" />
     <Content Include="Main.Master" />
     <Content Include="SuperAdmin.Master" />
+    <Content Include="TeachersDashboard.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

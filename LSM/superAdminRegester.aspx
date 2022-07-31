@@ -6,7 +6,15 @@
     <br />
     <br />
     <br />
-
+    <style>
+        header{
+            display: none;
+            color: red;
+        }
+        .nav .navlist{
+            display: none;
+        }
+    </style>
     <div class="container mb-4">
         <div class="row">
             <div class="col-md-6 mx-auto">

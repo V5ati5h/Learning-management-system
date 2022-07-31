@@ -33,7 +33,7 @@ namespace LSM
                     libmsg.Visible = true;
                     libmsg.Text = "Record Insert Successfully into the Database";
                     libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    Response.Redirect("superAdminLogin.aspx");
+                    Response.Redirect("defaultSuperAdmin.aspx");
 
                 }
                 conn.Close();
