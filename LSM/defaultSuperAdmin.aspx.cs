@@ -34,7 +34,7 @@ namespace LSM
                 if (dt.Rows.Count > 0)
                 {
                     Session["id"] = txtadminlogusername.Text;
-                    Response.Redirect("teacherDashbord.aspx");
+                    Response.Redirect("superAdminDashbord.aspx");
                     Session.RemoveAll();
                 }
                 else

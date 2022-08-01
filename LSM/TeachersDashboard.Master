@@ -16,7 +16,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+        <style>
+            :root {
+                --primary: #00ab00;
+                --primaryLight: #20c997;
+                --light: #F0FBFC;
+                --dark: #181d38;
+            }
+        </style>
         <header>
             <img src="img/avatar.png" class="avatarIcon">
             <label class="card-body display-7 fw-bold ls-tight">
@@ -37,7 +44,7 @@
                     </a>
                 </li>
                 <li class="navitem" id="umm">
-                    <a href="default3.aspx" id="ana">
+                    <a href="default.aspx" id="ana">
                         <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Log out</p>
                     </a>

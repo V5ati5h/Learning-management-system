@@ -2,14 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<style>
-        :root {
-            --primary: #dc3545;
-            --primaryLight: #d63384;
-            --light: #F0FBFC;
-            --dark: #181d38;
-        }
-	</style>
     <div class="row gap-2 p-3">
 		<div class="col-lg-9">
 			<div class="card">
@@ -29,11 +21,12 @@
 				<div class="card-header fw-bold text-danger ls-tight">Upload CSV</div>
 				<div class="card-body">
 					<asp:FileUpload ID="txt_Upload" runat="server" />
-					<asp:Button ID="btnsubmit" Text="Submit" runat="server" OnClick="btnsubmitclick"/>
+					<asp:Button ID="btnsubmit" Text="Submit" runat="server" OnClick="btnUpload_Click"/>
 				</div>
 			</div>
         </div>
     </div>
+	<asp:Label ID="Responsehu" runat="server" Visible="false" Text="No Response"></asp:Label>
 	<asp:GridView ID="GridView1" runat="server">
 </asp:GridView>
 </asp:Content>

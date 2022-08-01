@@ -2168,6 +2168,7 @@
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
     <Content Include="studentLogin.aspx" />
+    <Content Include="superAdminDashbord.aspx" />
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
     <Content Include="about.aspx" />
@@ -2178,12 +2179,15 @@
     <Content Include="fees.aspx" />
     <Content Include="homework.aspx" />
     <Content Include="defaultSuperAdmin.aspx" />
-    <Content Include="superAdminDashbord.aspx" />
     <Content Include="addFacultyMain.aspx" />
     <Content Include="superAdminRegester.aspx" />
     <Content Include="uploadBulkFaculty.aspx" />
     <Content Include="defaultTeacher.aspx" />
     <Content Include="teacherDashbord.aspx" />
+    <Content Include="courses.aspx" />
+    <Content Include="faculty.aspx" />
+    <Content Include="students.aspx" />
+    <Content Include="others.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SuperAdmin.Master.cs">
@@ -2278,19 +2282,19 @@
     <Compile Include="defaultSuperAdmin.aspx.designer.cs">
       <DependentUpon>defaultSuperAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="superAdminDashbord.aspx.cs">
-      <DependentUpon>superAdminDashbord.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="superAdminDashbord.aspx.designer.cs">
-      <DependentUpon>superAdminDashbord.aspx</DependentUpon>
-    </Compile>
     <Compile Include="addFacultyMain.aspx.cs">
       <DependentUpon>addFacultyMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="addFacultyMain.aspx.designer.cs">
       <DependentUpon>addFacultyMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superAdminDashbord.aspx.cs">
+      <DependentUpon>superAdminDashbord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superAdminDashbord.aspx.designer.cs">
+      <DependentUpon>superAdminDashbord.aspx</DependentUpon>
     </Compile>
     <Compile Include="superAdminRegester.aspx.cs">
       <DependentUpon>superAdminRegester.aspx</DependentUpon>
@@ -2326,6 +2330,34 @@
     </Compile>
     <Compile Include="teacherDashbord.aspx.designer.cs">
       <DependentUpon>teacherDashbord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="courses.aspx.cs">
+      <DependentUpon>courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="courses.aspx.designer.cs">
+      <DependentUpon>courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faculty.aspx.cs">
+      <DependentUpon>faculty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faculty.aspx.designer.cs">
+      <DependentUpon>faculty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="students.aspx.cs">
+      <DependentUpon>students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="students.aspx.designer.cs">
+      <DependentUpon>students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="others.aspx.cs">
+      <DependentUpon>others.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="others.aspx.designer.cs">
+      <DependentUpon>others.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

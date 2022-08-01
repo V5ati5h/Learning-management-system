@@ -1,21 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin.Master" AutoEventWireup="true" CodeBehind="addFacultyMain.aspx.cs" Inherits="LSM.WebForm11" %>
 	<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> </asp:Content>
 	<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-		<style>
-        :root {
-            --primary: #dc3545;
-            --primaryLight: #d63384;
-            --light: #F0FBFC;
-            --dark: #181d38;
-        }
-		.nav-pills .nav-link.active {
-			background-color: var(--primary);
-			color: white;
-		}
-		.nav-pills .nav-link:not(.active) {
-			color: var(--primary);
-		}
-		</style>
 		<div class="row">
 			<div class="col">
 				<div class="card m-3">

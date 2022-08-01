@@ -18,11 +18,92 @@ namespace LSM
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
         }
-        protected void btnsubmitclick(object sender, EventArgs e)
+
+        private void InsertCSVRecords(DataTable csvdt)
         {
-            System.IO.StreamReader myReader = new System.IO.StreamReader(txt_Upload.PostedFile.InputStream);
-            string csvData = myReader.ReadToEnd();
-            Response.Write(csvData);
+            try
+            {
+                SqlBulkCopy objbulk = new SqlBulkCopy(conn);
+                objbulk.DestinationTableName = "Tbl_Faculty";
+                objbulk.ColumnMappings.Add("Fname", "Fname");
+                objbulk.ColumnMappings.Add("Mname", "Mname");
+                objbulk.ColumnMappings.Add("Lname", "Lname");
+                objbulk.ColumnMappings.Add("Mobile", "Mobile");
+                objbulk.ColumnMappings.Add("Email", "Email");
+                objbulk.ColumnMappings.Add("Username", "Username");
+                objbulk.ColumnMappings.Add("Password", "Password");
+                objbulk.ColumnMappings.Add("Did", "Did");
+                conn.Open();
+                objbulk.WriteToServer(csvdt);
+                Responsehu.Visible = true;
+                Responsehu.Text = "Record Insert Successfully into the Database";
+                Responsehu.ForeColor = System.Drawing.Color.CornflowerBlue;
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Responsehu.Visible = true;
+                Responsehu.Text = ex.Message;
+            }
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = ReadCsvFile();
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Responsehu.Text = ex.Message;
+            }
+        }
+        public DataTable ReadCsvFile()
+        {
+
+            DataTable dtCsv = new DataTable();
+            string Fulltext;
+            if (txt_Upload.HasFile)
+            {
+                string FileSaveWithPath = Server.MapPath("\\" + System.DateTime.Now.ToString("ddMMyyyy_hhmmss") + ".csv");
+                txt_Upload.SaveAs(FileSaveWithPath);
+                using (StreamReader sr = new StreamReader(FileSaveWithPath))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        Fulltext = sr.ReadToEnd().ToString();
+                        string[] rows = Fulltext.Split('\n');
+                        for (int i = 0; i < rows.Count() - 1; i++)
+                        {
+                            string[] rowValues = rows[i].Split(',');
+                            {
+                                if (i == 0)
+                                {
+                                    for (int j = 0; j < rowValues.Count(); j++)
+                                    {
+                                        dtCsv.Columns.Add(rowValues[j]);
+                                    }
+                                }
+                                else
+                                {
+                                    DataRow dr = dtCsv.NewRow();
+                                    for (int k = 0; k < rowValues.Count(); k++)
+                                    {
+                                        dr[k] = rowValues[k].ToString();
+                                    }
+                                    dtCsv.Rows.Add(dr);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            InsertCSVRecords(dtCsv);
+            return dtCsv;
         }
     }
 }

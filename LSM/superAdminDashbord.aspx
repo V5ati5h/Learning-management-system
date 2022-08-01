@@ -2,12 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        :root {
-            --primary: #dc3545;
-            --primaryLight: #d63384;
-            --light: #F0FBFC;
-            --dark: #181d38;
-        }
-    </style>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>

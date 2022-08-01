@@ -18,11 +18,26 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <style>
+            :root {
+                --primary: #dc3545;
+                --primaryLight: #d63384;
+                --light: #F0FBFC;
+                --dark: #181d38;
+            }
+            .nav-pills .nav-link.active {
+                background-color: var(--primary);
+                color: white;
+            }
+            .nav-pills .nav-link:not(.active) {
+                color: var(--primary);
+            }
+        </style>
 
         <header>
             <img src="img/avatar.png" class="avatarIcon">
             <label class="card-body display-7 fw-bold ls-tight">
-                Good morning,<br /><span class="text-danger" id="iconh"> Student</span>
+                Good morning,<br /><span class="text-danger" id="iconh"> Admin</span>
             </label>
         </header>
         <navbar class="nav">
@@ -38,8 +53,32 @@
                         <p class="navitemlabel" id="iconh">Home</p>
                     </a>
                 </li>
+                <li class="navitem">
+                    <a href="courses.aspx" id="ana">
+                        <i class="fa-solid fa-book" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Courses</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="faculty.aspx" id="ana">
+                        <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Faculty</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="students.aspx" id="ana">
+                        <i class="fa-solid fa-user-graduate" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Students</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="others.aspx" id="ana">
+                        <i class="fa-solid fa-box-open" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Others</p>
+                    </a>
+                </li>
                 <li class="navitem" id="umm">
-                    <a href="default.aspx" id="ana">
+                    <a href="defaultSuperAdmin.aspx" id="ana">
                         <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Log out</p>
                     </a>
