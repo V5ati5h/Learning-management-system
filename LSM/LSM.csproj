@@ -2186,8 +2186,13 @@
     <Content Include="teacherDashbord.aspx" />
     <Content Include="courses.aspx" />
     <Content Include="faculty.aspx" />
-    <Content Include="students.aspx" />
     <Content Include="others.aspx" />
+    <Content Include="assignment.aspx" />
+    <Content Include="addStudents.aspx" />
+    <Content Include="students.aspx" />
+    <Content Include="uploadBulkStudent.aspx" />
+    <Content Include="addCourse.aspx" />
+    <Content Include="addNotice.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SuperAdmin.Master.cs">
@@ -2345,6 +2350,27 @@
     <Compile Include="faculty.aspx.designer.cs">
       <DependentUpon>faculty.aspx</DependentUpon>
     </Compile>
+    <Compile Include="others.aspx.cs">
+      <DependentUpon>others.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="others.aspx.designer.cs">
+      <DependentUpon>others.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assignment.aspx.cs">
+      <DependentUpon>assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assignment.aspx.designer.cs">
+      <DependentUpon>assignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addStudents.aspx.cs">
+      <DependentUpon>addStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addStudents.aspx.designer.cs">
+      <DependentUpon>addStudents.aspx</DependentUpon>
+    </Compile>
     <Compile Include="students.aspx.cs">
       <DependentUpon>students.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2352,12 +2378,26 @@
     <Compile Include="students.aspx.designer.cs">
       <DependentUpon>students.aspx</DependentUpon>
     </Compile>
-    <Compile Include="others.aspx.cs">
-      <DependentUpon>others.aspx</DependentUpon>
+    <Compile Include="uploadBulkStudent.aspx.cs">
+      <DependentUpon>uploadBulkStudent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="others.aspx.designer.cs">
-      <DependentUpon>others.aspx</DependentUpon>
+    <Compile Include="uploadBulkStudent.aspx.designer.cs">
+      <DependentUpon>uploadBulkStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addCourse.aspx.cs">
+      <DependentUpon>addCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addCourse.aspx.designer.cs">
+      <DependentUpon>addCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addNotice.aspx.cs">
+      <DependentUpon>addNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addNotice.aspx.designer.cs">
+      <DependentUpon>addNotice.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

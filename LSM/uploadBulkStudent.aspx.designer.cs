@@ -11,7 +11,7 @@ namespace LSM
 {
 
 
-    public partial class WebForm21
+    public partial class WebForm22
     {
     }
 }

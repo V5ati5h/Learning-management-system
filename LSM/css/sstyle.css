@@ -66,6 +66,10 @@ header {
     border-radius: 1rem 1rem 0rem 0rem;
 }
 
+.card .card-footer{
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
 .card .card-header ul li{
     border-radius: 100px;
 }

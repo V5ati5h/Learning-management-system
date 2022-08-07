@@ -3,18 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script>
-        var triggerTabList = [].slice.call(document.querySelectorAll('#pills-tab a'))
-        triggerTabList.forEach(function (triggerEl) {
-            var tabTrigger = new bootstrap.Tab(triggerEl)
-
-            triggerEl.addEventListener('click', function (event) {
-                event.preventDefault()
-                tabTrigger.show()
-            })
-        })
-    </script>
-
     <div class="row">
         <div class="col-lg-3 mb-2">
             <div class="text-center card">

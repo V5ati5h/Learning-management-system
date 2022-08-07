@@ -14,6 +14,7 @@ namespace LSM
     public partial class WebForm13 : System.Web.UI.Page
     {
         SqlConnection conn;
+        string FilePath;
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
@@ -39,7 +40,11 @@ namespace LSM
                 Responsehu.Text = "Record Insert Successfully into the Database";
                 Responsehu.ForeColor = System.Drawing.Color.CornflowerBlue;
                 conn.Close();
-
+                FileInfo file = new FileInfo(FilePath);
+                if (file.Exists) 
+                {
+                    file.Delete();
+                }
             }
             catch (Exception ex)
             {
@@ -69,9 +74,9 @@ namespace LSM
             string Fulltext;
             if (txt_Upload.HasFile)
             {
-                string FileSaveWithPath = Server.MapPath("\\" + System.DateTime.Now.ToString("ddMMyyyy_hhmmss") + ".csv");
-                txt_Upload.SaveAs(FileSaveWithPath);
-                using (StreamReader sr = new StreamReader(FileSaveWithPath))
+                FilePath = Server.MapPath("\\" + System.DateTime.Now.ToString("ddMMyyyy_hhmmss") + ".csv");
+                txt_Upload.SaveAs(FilePath);
+                using (StreamReader sr = new StreamReader(FilePath))
                 {
                     while (!sr.EndOfStream)
                     {

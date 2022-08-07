@@ -24,19 +24,21 @@
                                     <asp:TextBox  CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                                     <label for="TextBox2">Password</label>
                                 </div>
+                                <!--
                                 <div class="row align-content-center mb-2">
                                     <div class="col d-flex justify-content-center">
-                                        <!-- Checkbox -->
+                                        <!-- Checkbox -/->
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="RememberME" checked />
                                             <label class="form-check-label" for="RememberME"> Remember me </label>
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <!-- Simple link -->
+                                        <!-- Simple link -/->
                                         <a href="#!">Forgot password?</a>
                                     </div>
                                 </div>
+                                -->
                                 <div class="row form-group ms-5 me-5">
                                     <asp:Button CssClass="btn btn-primary w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
                                 </div>

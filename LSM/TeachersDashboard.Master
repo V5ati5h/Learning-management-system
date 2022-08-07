@@ -43,6 +43,24 @@
                         <p class="navitemlabel" id="iconh">Home</p>
                     </a>
                 </li>
+                <li class="navitem">
+                    <a href="students.aspx" id="ana">
+                        <i class="fa-solid fa-house" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Students</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="assignment.aspx" id="ana">
+                        <i class="fa-solid fa-house" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Assignement</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="addNotice.aspx" id="ana">
+                        <i class="fa-solid fa-house" id="iconh"></i>
+                        <p class="navitemlabel" id="iconh">Notice</p>
+                    </a>
+                </li>
                 <li class="navitem" id="umm">
                     <a href="default.aspx" id="ana">
                         <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
