@@ -23,6 +23,13 @@
                 --light: #F0FBFC;
                 --dark: #181d38;
             }
+            .nav-pills .nav-link.active {
+                background-color: var(--primary);
+                color: white;
+            }
+            .nav-pills .nav-link:not(.active) {
+                color: var(--primary);
+            }
         </style>
         <header>
             <img src="img/avatar.png" class="avatarIcon">
@@ -38,26 +45,26 @@
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="teacherDashboard.aspx" id="ana">
+                    <a href="teacherDashbord.aspx" id="ana">
                         <i class="fa-solid fa-house" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Home</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="students.aspx" id="ana">
-                        <i class="fa-solid fa-house" id="iconh"></i>
+                        <i class="fa-solid fa-graduation-cap" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Students</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="assignment.aspx" id="ana">
-                        <i class="fa-solid fa-house" id="iconh"></i>
+                        <i class="fa-solid fa-clipboard" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Assignement</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="addNotice.aspx" id="ana">
-                        <i class="fa-solid fa-house" id="iconh"></i>
+                        <i class="fa-solid fa-envelope" id="iconh"></i>
                         <p class="navitemlabel" id="iconh">Notice</p>
                     </a>
                 </li>

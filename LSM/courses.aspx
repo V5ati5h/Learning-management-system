@@ -24,6 +24,10 @@
                                 <div class="row form-group ms-5 me-5">
                                     <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Add Course" />
                                 </div>
+                                <asp:DropDownList runat="server" ID="DDList">
+                                    <asp:ListItem>Test</asp:ListItem>
+                                    <asp:ListItem>Test2</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                         </div>
                 </div>
