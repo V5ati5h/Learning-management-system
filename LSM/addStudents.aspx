@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TeachersDashboard.Master" AutoEventWireup="true" CodeBehind="addStudents.aspx.cs" Inherits="LSM.WebForm20" %>
 	<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> </asp:Content>
 	<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-		<div class="row m-3 mb-0">
+		<div class="row mb-0">
 			<div class="col">
 				<div class="form-floating mb-3">
 					<asp:DropDownList CssClass="form-control" ID="ddDepart" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddDepart_SelectedIndexChanged">
@@ -20,7 +20,7 @@
 			</div>
 			<div class="col">
 				<div class="form-floating mb-3">
-					<asp:DropDownList CssClass="form-control" ID="ddSem" runat="server">
+					<asp:DropDownList CssClass="form-control" ID="ddSem" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddSem_SelectedIndexChanged">
 						<asp:ListItem>Select Semister</asp:ListItem>
 					</asp:DropDownList>
 					<label for="ddSem">Semester</label>
@@ -29,10 +29,10 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="card m-3 mt-0">
+				<div class="card mt-0">
 					<div class="card-body">
 						<div class="d-flex justify-content-end">
-							<asp:Button ID="Button2" class="btn btn-success" runat="server" Text="Bulk Upload"></asp:Button>
+							<asp:Button ID="Button2" class="btn btn-success" runat="server" Text="Bulk Upload" OnClick="Button2_Click"></asp:Button>
 						</div>
 						<div class="row text-center">
 							<h1 class="display-5 fw-bold ls-tight">Regester New
@@ -489,7 +489,7 @@
 							</div>
 						</div>
 						<div class="row form-group ms-5 me-5">
-							<asp:Button CssClass="btn btn-success w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Regester" /> </div>
+							<asp:Button CssClass="btn btn-success w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Regester" OnClick="insertData" /> </div>
 					</div>
 				</div>
 			</div>

@@ -7,6 +7,7 @@
         <div class="col-lg-3 mb-2">
             <div class="text-center card">
                 <div class="card-header text-light bg-primary fw-bold p-2">Timetable</div>
+                <div class="card-body p-1">
                 <ul class="list-group list-group-flush rounded-pill">
                     <li class="list-group-item">Monday</li>
                     <li class="list-group-item">Tuesday</li>
@@ -16,6 +17,7 @@
                     <li class="list-group-item">Saturday</li>
                     <li class="list-group-item">Sunday</li>
                 </ul>
+                </div>
             </div>
         </div>
         <div class="col-lg-9">

@@ -38,8 +38,13 @@
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
-											<asp:TextBox CssClass="form-control" ID="txtrole" runat="server" placeholder="Role"></asp:TextBox>
-											<label for="txtrole">Role</label>
+											<asp:DropDownList CssClass="form-control" ID="ddRole" runat="server" AutoPostBack="true">
+												<asp:ListItem>Select Role</asp:ListItem>
+												<asp:ListItem>Admin</asp:ListItem>
+												<asp:ListItem>Teaching</asp:ListItem>
+												<asp:ListItem>Non-teaching</asp:ListItem>
+											</asp:DropDownList>
+											<label for="ddRole">Role</label>
 										</div>
 									</div>
 									<div class="col">
@@ -59,7 +64,7 @@
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
-											<asp:TextBox CssClass="form-control" ID="txtfirstname" runat="server" placeholder="First Name"></asp:TextBox>
+											<asp:TextBox CssClass="form-control" ID="txtfirstname" runat="server" placeholder="First Name" required></asp:TextBox>
 											<label for="txtfirstname">First Name</label>
 										</div>
 										<div id="textExample1" class="form-text">

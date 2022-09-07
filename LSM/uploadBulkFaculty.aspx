@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row gap-2 p-3">
+    <div class="row gap-2">
 		<div class="col-lg-9">
 			<div class="card">
 				<div class="card-header fw-bold text-danger">Criteria</div>
@@ -26,7 +26,15 @@
 			</div>
         </div>
     </div>
-	<asp:Label ID="Responsehu" runat="server" Visible="false" Text="No Response"></asp:Label>
-	<asp:GridView ID="GridView1" runat="server">
+	<div class="row p-3">
+		<div class="card p-0">
+			<div class="card-header text-light d-flex justify-content-between align-items-center bg-danger fw-bold">Data List
+				<asp:Label ID="Responsehu" runat="server" Visible="false" Text="No Response"></asp:Label>
+			</div>
+			<div class="card-body m-1" id="datatable">
+				<asp:GridView ID="GridView1" runat="server"></asp:GridView>
+			</div>
+		</div>
+	</div>
 </asp:GridView>
 </asp:Content>

@@ -1,76 +1,58 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin.Master" AutoEventWireup="true" CodeBehind="faculty.aspx.cs" Inherits="LSM.WebForm17" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
-        <div class="d-flex justify-content-end mb-2">
-            <asp:Button ID="Button4" class="btn btn-danger" runat="server" Text="Add New"></asp:Button>
-        </div>
-        <div class="col-lg-2 mb-2">
-            <div class="card">
-                <div class="card-header text-danger">Name</div>
-                <img src="img/icon.png" class="card-img-top img-thumbnail"  alt="...">
-                <div class="card-body">
-                    <asp:Button CssClass="btn btn-primary w-20 btn-block btn-s" ID="Button1" runat="server" Text="Edit" />
-                    <asp:Button CssClass="btn btn-success w-20 btn-block btn-s" ID="Button3" runat="server" Text="View" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-s" ID="Button2" runat="server" Text="Remove" />
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 mb-2">
-            <div class="card">
-                <div class="card-header text-danger">Name</div>
-                <img src="img/icon.png" class="card-img-top img-thumbnail"  alt="...">
-                <div class="card-body">
-                    <asp:Button CssClass="btn btn-primary w-20 btn-block btn-s" ID="Button5" runat="server" Text="Edit" />
-                    <asp:Button CssClass="btn btn-success w-20 btn-block btn-s" ID="Button6" runat="server" Text="View" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-s" ID="Button7" runat="server" Text="Remove" />
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 mb-2">
-            <div class="card">
-                <div class="card-header text-danger">Name</div>
-                <img src="img/icon.png" class="card-img-top img-thumbnail"  alt="...">
-                <div class="card-body">
-                    <asp:Button CssClass="btn btn-primary w-20 btn-block btn-s" ID="Button8" runat="server" Text="Edit" />
-                    <asp:Button CssClass="btn btn-success w-20 btn-block btn-s" ID="Button9" runat="server" Text="View" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-s" ID="Button10" runat="server" Text="Remove" />
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 mb-2">
-            <div class="card">
-                <div class="card-header text-danger">Name</div>
-                <img src="img/icon.png" class="card-img-top img-thumbnail"  alt="...">
-                <div class="card-body">
-                    <asp:Button CssClass="btn btn-primary w-20 btn-block btn-s" ID="Button11" runat="server" Text="Edit" />
-                    <asp:Button CssClass="btn btn-success w-20 btn-block btn-s" ID="Button12" runat="server" Text="View" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-s" ID="Button13" runat="server" Text="Remove" />
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 mb-2">
-            <div class="card">
-                <div class="card-header text-danger">Name</div>
-                <img src="img/icon.png" class="card-img-top img-thumbnail"  alt="...">
-                <div class="card-body">
-                    <asp:Button CssClass="btn btn-primary w-20 btn-block btn-s" ID="Button14" runat="server" Text="Edit" />
-                    <asp:Button CssClass="btn btn-success w-20 btn-block btn-s" ID="Button15" runat="server" Text="View" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-s" ID="Button16" runat="server" Text="Remove" />
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 mb-2">
-            <div class="card">
-                <div class="card-header text-danger">Name</div>
-                <img src="img/icon.png" class="card-img-top img-thumbnail"  alt="...">
-                <div class="card-body">
-                    <asp:Button CssClass="btn btn-primary w-20 btn-block btn-s" ID="Button17" runat="server" Text="Edit" />
-                    <asp:Button CssClass="btn btn-success w-20 btn-block btn-s" ID="Button18" runat="server" Text="View" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-s" ID="Button19" runat="server" Text="Remove" />
-                </div>
-            </div>
-        </div>
-    </div>
-</asp:Content>
+	<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> </asp:Content>
+	<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+		<div class="row mb-0">
+			<div class="row">
+				<div class="card p-0">
+					<div class="card-header text-light d-flex justify-content-between align-items-center bg-danger fw-bold">Faculty List
+						<asp:Button ID="Button4" class="btn btn-outline-light" runat="server" Text="Add New"></asp:Button>
+					</div>
+					<div class="card-body m-0">
+						<div class="row g-1" id="datatable"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+            const container = document.getElementById('datatable');
+
+            function createCrad(number) {
+                const mainCol = document.createElement('div');
+                mainCol.className = "col-lg-2";
+                const card = document.createElement('div');
+                card.className = "card";
+                const cardH = document.createElement('div');
+                cardH.className = "card-header";
+                cardH.innerText = "Name: " + number;
+                const cardImg = document.createElement('img');
+                cardImg.className = "card-img-top img-thumbnail";
+                cardImg.src = "img/icon.png";
+                const cardB = document.createElement('div');
+                cardB.className = "card-body d-grid gap-1";
+                const ButtonEdit = document.createElement('button');
+                ButtonEdit.className = "btn btn-primary w-20 btn-block btn-s";
+                ButtonEdit.innerText = "Edit";
+                const ButtonView = document.createElement('button');
+                ButtonView.className = "btn btn-success w-20 btn-block btn-s";
+                ButtonView.innerText = "View";
+                const ButtonRemove = document.createElement('button');
+                ButtonRemove.className = "btn btn-danger w-20 btn-block btn-s";
+                ButtonRemove.innerText = "Remove";
+                cardB.appendChild(ButtonEdit);
+                cardB.appendChild(ButtonView);
+                cardB.appendChild(ButtonRemove);
+                card.appendChild(cardH);
+                card.appendChild(cardImg);
+                card.appendChild(cardB)
+                mainCol.append(card);
+                return mainCol;
+            }
+            container.appendChild(createCrad(1));
+            container.appendChild(createCrad(2));
+            container.appendChild(createCrad(3));
+            container.appendChild(createCrad(4));
+            container.appendChild(createCrad(5));
+            container.appendChild(createCrad(6));
+            container.appendChild(createCrad(7));
+			</script>
+	</asp:Content>
