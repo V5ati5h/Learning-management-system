@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="LMS.StudentDashboard.main" %>
+	<!DOCTYPE html>
+	<html>
+
+	<head runat="server">
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<link href="../fontawsome/css/all.min.css" rel="stylesheet" />
+		<link href="../css/sstyle.css" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+		<script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+		<script src="../bootstrap/js/popper.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+		<asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
+	</head>
+
+	<body>
+		<form id="form1" runat="server">
+			<header> <img src="../img/avatar.png" class="avatarIcon">
+				<label class="card-body display-7 fw-bold ls-tight"> Good morning,
+					<br /><span class="text-primary"> Student</span> </label>
+			</header>
+			<navbar class="nav">
+				<ul class="navlist">
+					<li class="navitem" id="umm">
+						<a href="#" id="ana"> <img src="../img/avatar.png" class="avatarIcon"> </a>
+					</li>
+					<li class="navitem">
+						<a href="Default.aspx" id="ana"> <i class="fa-solid fa-house" id="iconh"></i>
+							<p class="navitemlabel" id="iconh">Home</p>
+						</a>
+					</li>
+					<li class="navitem">
+						<a href="homework.aspx" id="ana"> <i class="fa-solid fa-laptop-file"></i>
+							<p class="navitemlabel" id="iconh">Homework</p>
+						</a>
+					</li>
+					<li class="navitem">
+						<a href="fees.aspx" id="ana"> <i class="fa-solid fa-money-bills"></i>
+							<p class="navitemlabel" id="iconh">Fees</p>
+						</a>
+					</li>
+					<li class="navitem">
+						<a href="notice.aspx" id="ana"> <i class="fa-solid fa-circle-exclamation"></i>
+							<p class="navitemlabel" id="iconh">Notice</p>
+						</a>
+					</li>
+					<li class="navitem">
+						<a href="examination.aspx" id="ana"> <i class="fa-solid fa-flask-vial"></i>
+							<p class="navitemlabel" id="iconh">Examination</p>
+						</a>
+					</li>
+					<li class="navitem" id="umm">
+						<a href="default3.aspx" id="ana"> <i class="fa-solid fa-arrow-right-from-bracket"></i>
+							<p class="navitemlabel" id="iconh">Log out</p>
+						</a>
+					</li>
+				</ul>
+			</navbar>
+			<!-- Content Holder start -->
+			<section class="holderMain">
+				<div class="container-fluid p-3 gap-1">
+					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+				</div>
+			</section>
+			<!-- Content Holder end -->
+			<footer></footer>
+		</form>
+	</body>
+
+	</html>
