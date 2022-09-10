@@ -26,11 +26,11 @@ namespace LMS.TeacherDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Department", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Depart", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "departName";
-            ddDepart.DataValueField = "departID";
+            ddDepart.DataTextField = "Dname";
+            ddDepart.DataValueField = "Did";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();

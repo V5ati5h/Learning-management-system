@@ -13,5 +13,20 @@ namespace LMS.AdminDashboard
         {
 
         }
+
+        protected void AddDepart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addDept.aspx");
+        }
+
+        protected void AddClass_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addClass.aspx");
+        }
+
+        protected void AddSem_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addSem.aspx");
+        }
     }
 }

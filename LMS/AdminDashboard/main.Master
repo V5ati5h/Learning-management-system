@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="LMS.AdminDashboard.main" %>
-	<!DOCTYPE html>
-	<html>
-
+<!DOCTYPE html>
+<html>
 	<head runat="server">
 		<title></title>
 		<meta charset="utf-8">
@@ -48,18 +47,8 @@
 						</a>
 					</li>
 					<li class="navitem">
-						<a href="courses.aspx" id="ana"> <i class="fa-solid fa-book" id="iconh"></i>
-							<p class="navitemlabel" id="iconh">Courses</p>
-						</a>
-					</li>
-					<li class="navitem">
 						<a href="faculty.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
 							<p class="navitemlabel" id="iconh">Faculty</p>
-						</a>
-					</li>
-					<li class="navitem">
-						<a href="others.aspx" id="ana"> <i class="fa-solid fa-box-open" id="iconh"></i>
-							<p class="navitemlabel" id="iconh">Others</p>
 						</a>
 					</li>
 					<li class="navitem" id="umm">

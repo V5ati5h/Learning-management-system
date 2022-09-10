@@ -19,7 +19,7 @@
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="bacicinfo-tab" data-bs-toggle="tab" data-bs-target="#bacicinfo" type="button" role="tab" aria-controls="basicinfo" aria-selected="true">Basic Infromation</button>
 							</li>
-							<li class="nav-item" role="presentation">
+							<!-- <li class="nav-item" role="presentation">
 								<button class="nav-link" id="miscellanousdetails-tab" data-bs-toggle="tab" data-bs-target="#miscellanousdetails" type="button" role="tab" aria-controls="miscellanousdetails" aria-selected="true">Miscellanous Details</button>
 							</li>
 							<li class="nav-item" role="presentation">
@@ -30,13 +30,13 @@
 							</li>
 							<li class="nav-item" role="presentation">
 								<button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button" role="tab" aria-controls="documents" aria-selected="false">Documents</button>
-							</li>
+							</li> -->
 						</ul>
 						<!-- Tab panes -->
 						<div class="tab-content">
 							<div class="tab-pane active" id="bacicinfo" role="tabpanel" aria-labelledby="bacicinfo-tab">
 								<div class="row">
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:DropDownList CssClass="form-control" ID="ddRole" runat="server" AutoPostBack="true">
 												<asp:ListItem>Select Role</asp:ListItem>
@@ -46,160 +46,158 @@
 											</asp:DropDownList>
 											<label for="ddRole">Role</label>
 										</div>
-									</div>
+									</div> -->
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtdept" runat="server" placeholder="Department Number"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtdept"></asp:RequiredFieldValidator>
 											<label for="txtdept">Department no</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtdeptname" runat="server" placeholder="Department Name"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ControlToValidate="txtdeptname"></asp:RequiredFieldValidator>
 											<label for="txtdeptname">Department Name</label>
 										</div>
 									</div>
 									<div class="col"></div>
 								</div>
 								<div class="row">
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtfirstname" runat="server" placeholder="First Name"></asp:TextBox>
 											<label for="txtfirstname">First Name</label>
 										</div>
-										<div id="textExample1" class="form-text">
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtfname" Visible="false" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-										</div>
-									</div>
+									</div> -->
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtlname" runat="server" placeholder="Last Name"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtlname"> </asp:RequiredFieldValidator>
 											<label for="txtlname">Last Name</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtfname" runat="server" placeholder="Father Name"></asp:TextBox>
-											<label for="txtfname">Father Name</label>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtfname"> </asp:RequiredFieldValidator>
+											<label for="txtfname">First Name</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtmname" runat="server" placeholder="Mother Name"></asp:TextBox>
-											<label for="txtmname">Mother Name</label>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtmname"> </asp:RequiredFieldValidator>
+											<label for="txtmname">Middle Name</label>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
-											<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Visible="false" ErrorMessage="Invallid email" ControlToValidate="txtemailaddress" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
 											<asp:TextBox CssClass="form-control" ID="txtemailaddress" runat="server" placeholder="Email Address" TextMode="Email"></asp:TextBox>
+											<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Visible="false" ErrorMessage="Invallid email" ControlToValidate="txtemailaddress" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ControlToValidate="txtemailaddress"></asp:RequiredFieldValidator>
 											<label for="txtemailaddress">Email Address</label>
 										</div>
 									</div>
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtgender" runat="server" placeholder="Gender"></asp:TextBox>
 											<label for="txtgender">Gender</label>
 										</div>
-									</div>
-									<div class="col">
+									</div> -->
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtdateofbirth" runat="server" placeholder="Date Of Birth"></asp:TextBox>
 											<label for="txtdateofbirth">Date Of Birth</label>
 										</div>
-									</div>
-									<div class="col">
+									</div> -->
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtdateofjoining" runat="server" placeholder="Date Of Joining"></asp:TextBox>
 											<label for="txtdateofjoining">Date Of Joining</label>
 										</div>
-									</div>
-								</div>
+									</div> --></div>
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtmobileno" runat="server" placeholder="Mobile Number" TextMode="Number"></asp:TextBox>
 											<label for="txtmobileno">Mobile Number</label>
 											<div class="form-helper">
-												<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" Visible="false" ControlToValidate="txtmobileno" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-												<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="10 digits required" Visible="false" ControlToValidate="txtmobileno" ForeColor="#CC0000" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+												<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtmobileno" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+												<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="10 digits required" ControlToValidate="txtmobileno" ForeColor="#CC0000" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
 											</div>
 										</div>
 									</div>
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtemergencymobilenumber" runat="server" placeholder="Emergency Contact Number" TextMode="Number"></asp:TextBox>
 											<label for="txtemergencymobilenumber">Emergency Contact Number</label>
-											<div class="form-helper">
-												<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" Visible="false" ControlToValidate="txtemergencymobilenumber" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-												<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="10 digits required" Visible="false" ControlToValidate="txtemergencymobilenumber" ForeColor="#CC0000" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-											</div>
 										</div>
-									</div>
-									<div class="col">
+									</div> -->
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtmarritalststus" runat="server" placeholder="Marrital Status"></asp:TextBox>
 											<label for="txtmarritalststus">Marrital Status</label>
 										</div>
-									</div>
-									<div class="col align-content-center">
+									</div> -->
+									<!-- <div class="col align-content-center">
 										<div class="input-group">
 											<div class="custom-file">
 												<asp:FileUpload ID="FileUpload2" runat="server" CssClass="custom-file-input" aria-describedby="inputGroupFileAddon01" placeholder="Upload Image" /> </div>
 										</div>
-									</div>
-								</div>
+									</div> --></div>
 								<div class="row">
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtcurrentaddress" runat="server" TextMode="MultiLine" Height="100" placeholder="Current Address"></asp:TextBox>
 											<label for="txtcurrentaddress">Current Address</label>
 										</div>
-									</div>
-									<div class="col">
+									</div> -->
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtpermananetaddress" runat="server" TextMode="MultiLine" Height="100" placeholder="Permanenet Address"></asp:TextBox>
 											<label for="txtpermananetaddress">Permanenet Address</label>
 										</div>
-									</div>
-								</div>
+									</div> --></div>
 								<div class="row">
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtqualification" runat="server" placeholder="Qualification"></asp:TextBox>
 											<label for="txtqualification">Qualification</label>
 										</div>
-									</div>
-									<div class="col">
+									</div> -->
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtworkexperiance" runat="server" textmode="password" placeholder="Work Experiance"></asp:TextBox>
 											<label for="txtworkexperiance">Work Experiance</label>
 										</div>
-									</div>
-									<div class="col">
+									</div> -->
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtnote" runat="server" textmode="password" placeholder="Note"></asp:TextBox>
 											<label for="txtnote">Note</label>
 										</div>
-									</div>
-								</div>
+									</div> --></div>
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtusername" runat="server" placeholder="Username"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ControlToValidate="txtusername"></asp:RequiredFieldValidator>
 											<label for="txtusername">Username</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtpassword" runat="server" textmode="password" placeholder="Password"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="*" ControlToValidate="txtpassword"></asp:RequiredFieldValidator>
 											<label for="txtpassword">Password</label>
 										</div>
 									</div>
 								</div>
 							</div>
+							<!-- 
 							<div class="tab-pane" id="miscellanousdetails" role="tabpanel" aria-labelledby="miscellanousdetails-tab">
 								<div class="row">
 									<div class="col">
@@ -303,8 +301,8 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="tab-pane" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+							</div> -->
+							<!-- <div class="tab-pane" id="documents" role="tabpanel" aria-labelledby="documents-tab">
 								<div class="row">
 									<div class="col">
 										<label>Resume</label>
@@ -319,8 +317,7 @@
 									</div>
 									<div class="col"> </div>
 								</div>
-							</div>
-						</div>
+							</div> --></div>
 						<div class="row form-group ms-5 me-5">
 							<asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Regester" OnClick="Button1_Click" /> </div>
 					</div>

@@ -23,7 +23,7 @@ namespace LMS.AdminDashboard
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_Tbl_faculty", conn);
+                SqlCommand cmd = new SqlCommand("usp_Faculty", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Fname", txtfname.Text);
                 cmd.Parameters.AddWithValue("@Mname", txtmname.Text);
@@ -33,7 +33,7 @@ namespace LMS.AdminDashboard
                 cmd.Parameters.AddWithValue("@Username", txtusername.Text);
                 cmd.Parameters.AddWithValue("@Password", txtpassword.Text);
                 cmd.Parameters.AddWithValue("@Did", txtdept.Text);
-                cmd.Parameters.AddWithValue("@DName", txtdeptname.Text);
+                cmd.Parameters.AddWithValue("@deptname", txtdeptname.Text);
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)
@@ -41,7 +41,7 @@ namespace LMS.AdminDashboard
                     libmsg.Visible = true;
                     libmsg.Text = "Record Insert Successfully into the Database";
                     libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    Response.Redirect("default.aspx");
+                    //Response.Redirect("default.aspx");
 
                 }
                 conn.Close();

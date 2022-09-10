@@ -41,11 +41,11 @@
 					<asp:Button ID="Button2" class="btn btn-outline-light" runat="server" Text="Add New" OnClick="Button2_Click"></asp:Button>
 				</div>
 				<div class="card-body m-0">
-					<div class="row g-1" id="datatable"></div>
+					<!-- <div class="row g-1" id="datatable"></div> -->
 				</div>
 			</div>
 		</div>
-		<script>
+		<!-- <script>
             const container = document.getElementById('datatable');
 
             function createCrad(number) {
@@ -86,5 +86,5 @@
             container.appendChild(createCrad(5));
             container.appendChild(createCrad(6));
             container.appendChild(createCrad(7));
-		</script>
+		</script> -->
 	</asp:Content>

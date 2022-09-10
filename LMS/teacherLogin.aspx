@@ -17,10 +17,12 @@
 								<div class="col gap-1">
 									<div class="form-floating mb-3">
 										<asp:TextBox CssClass="form-control" ID="txtlogusername" runat="server" placeholder="Username"></asp:TextBox>
+										<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtlogusername"> </asp:RequiredFieldValidator>
 										<label for="txtadminlogusername">Username</label>
 									</div>
 									<div class="form-floating mb-3">
 										<asp:TextBox CssClass="form-control" ID="txtlogpassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+										<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtlogpassword"> </asp:RequiredFieldValidator>
 										<label for="txtadminlogpassword">Password</label>
 									</div>
 									<div class="row form-group ms-5 me-5">

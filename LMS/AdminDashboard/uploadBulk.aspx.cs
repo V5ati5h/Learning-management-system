@@ -26,14 +26,16 @@ namespace LMS.AdminDashboard
             {
                 SqlBulkCopy objbulk = new SqlBulkCopy(conn);
                 objbulk.DestinationTableName = "Tbl_Faculty";
-                objbulk.ColumnMappings.Add("Fname", "Fname");
-                objbulk.ColumnMappings.Add("Mname", "Mname");
-                objbulk.ColumnMappings.Add("Lname", "Lname");
-                objbulk.ColumnMappings.Add("Mobile", "Mobile");
-                objbulk.ColumnMappings.Add("Email", "Email");
-                objbulk.ColumnMappings.Add("Username", "Username");
-                objbulk.ColumnMappings.Add("Password", "Password");
-                objbulk.ColumnMappings.Add("Did", "Did");
+               // objbulk.ColumnMappings.Add("Fid", "Fid");
+                objbulk.ColumnMappings.Add("Fname","Fname");
+                objbulk.ColumnMappings.Add("Mname","Mname");
+                objbulk.ColumnMappings.Add("Lname","Lname");
+                objbulk.ColumnMappings.Add("Mobile","Mobile");
+                objbulk.ColumnMappings.Add("Email","Email");
+                objbulk.ColumnMappings.Add("Username","Username");
+                objbulk.ColumnMappings.Add("Password","Password");
+                objbulk.ColumnMappings.Add("Did","Did");
+                objbulk.ColumnMappings.Add("deptname","deptname");
                 conn.Open();
                 objbulk.WriteToServer(csvdt);
                 Responsehu.Visible = true;
@@ -41,10 +43,10 @@ namespace LMS.AdminDashboard
                 Responsehu.ForeColor = System.Drawing.Color.CornflowerBlue;
                 conn.Close();
                 FileInfo file = new FileInfo(FilePath);
-                if (file.Exists)
-                {
-                    file.Delete();
-                }
+                //if (file.Exists)
+                //{
+                //    file.Delete();
+                //}
             }
             catch (Exception ex)
             {
@@ -88,7 +90,7 @@ namespace LMS.AdminDashboard
                             {
                                 if (i == 0)
                                 {
-                                    for (int j = 0; j < rowValues.Count(); j++)
+                                    for (int j = 0; j <rowValues.Count(); j++)
                                     {
                                         dtCsv.Columns.Add(rowValues[j]);
                                     }
@@ -96,7 +98,7 @@ namespace LMS.AdminDashboard
                                 else
                                 {
                                     DataRow dr = dtCsv.NewRow();
-                                    for (int k = 0; k < rowValues.Count(); k++)
+                                    for (int k = 0; k <rowValues.Count(); k++)
                                     {
                                         dr[k] = rowValues[k].ToString();
                                     }

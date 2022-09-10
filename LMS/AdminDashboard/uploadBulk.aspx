@@ -16,7 +16,9 @@
 				</div>
 			</div>
 			<div class="col">
-				<div class="card">
+				<a href="format/facultyFormat.csv" target="_blank">
+					<asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl="~/AdminDashboard/img/xlsx.png" Width="150px" />
+				</a><div class="card">
 					<div class="card-header fw-bold text-danger ls-tight">Upload CSV</div>
 					<div class="card-body">
 						<asp:FileUpload ID="txt_Upload" runat="server" />

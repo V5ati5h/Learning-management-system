@@ -68,12 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminDashboard\default.aspx" />
-    <Content Include="AdminDashboard\courses.aspx" />
     <Content Include="AdminDashboard\faculty.aspx" />
+    <Content Include="AdminDashboard\img\xlsx.png" />
     <Content Include="AdminDashboard\others.aspx" />
     <Content Include="AdminDashboard\addFaculty.aspx" />
     <Content Include="AdminDashboard\uploadBulk.aspx" />
     <Content Include="AdminDashboard\regester.aspx" />
+    <Content Include="AdminDashboard\addDept.aspx" />
+    <Content Include="AdminDashboard\addClass.aspx" />
+    <Content Include="AdminDashboard\addSem.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
@@ -2187,13 +2190,6 @@
     <Compile Include="AdminDashboard\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminDashboard\courses.aspx.cs">
-      <DependentUpon>courses.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminDashboard\courses.aspx.designer.cs">
-      <DependentUpon>courses.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AdminDashboard\faculty.aspx.cs">
       <DependentUpon>faculty.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2228,6 +2224,27 @@
     </Compile>
     <Compile Include="AdminDashboard\regester.aspx.designer.cs">
       <DependentUpon>regester.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\addDept.aspx.cs">
+      <DependentUpon>addDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\addDept.aspx.designer.cs">
+      <DependentUpon>addDept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\addClass.aspx.cs">
+      <DependentUpon>addClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\addClass.aspx.designer.cs">
+      <DependentUpon>addClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\addSem.aspx.cs">
+      <DependentUpon>addSem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\addSem.aspx.designer.cs">
+      <DependentUpon>addSem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -2451,6 +2468,7 @@
     <Content Include="materialIcons\MaterialIconsSharp-Regular.otf" />
     <Content Include="materialIcons\MaterialIconsTwoTone-Regular.otf" />
     <Content Include="AdminDashboard\main.Master" />
+    <Content Include="AdminDashboard\format\facultyFormat.csv" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="StudentDashboard\main.Master" />

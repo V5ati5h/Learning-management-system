@@ -26,11 +26,11 @@ namespace LMS.TeacherDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Department", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Depart", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "departName";
-            ddDepart.DataValueField = "departID";
+            ddDepart.DataTextField = "Dname";
+            ddDepart.DataValueField = "Did";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -40,7 +40,7 @@ namespace LMS.TeacherDashboard
         {
             int DepartId = Convert.ToInt32(ddDepart.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Class where departID=" + DepartId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where Did=" + DepartId, conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -54,7 +54,7 @@ namespace LMS.TeacherDashboard
         {
             int ClassId = Convert.ToInt32(ddClass.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Sem where classID=" + ClassId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Sem where classID=" + ClassId, conn);
             cmd.CommandType = CommandType.Text;
             ddSem.DataSource = cmd.ExecuteReader();
             ddSem.DataTextField = "semName";
