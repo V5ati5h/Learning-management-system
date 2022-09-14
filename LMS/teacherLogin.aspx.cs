@@ -34,8 +34,8 @@ namespace LMS
                 if (dt.Rows.Count > 0)
                 {
                     Session["id"] = txtlogusername.Text;
-                    Response.Redirect("./TeacherDashboard/Default.aspx");
-                    Session.RemoveAll();
+                    Session["redirectedFrom"] = "Login";
+                    Response.Redirect("./TeacherDashboard/profile.aspx");
                 }
                 else
                 {

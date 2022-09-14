@@ -2167,6 +2167,8 @@
     <Content Include="TeacherDashboard\notice.aspx" />
     <Content Include="TeacherDashboard\addStudent.aspx" />
     <Content Include="TeacherDashboard\uploadBulk.aspx" />
+    <Content Include="TeacherDashboard\profile.aspx" />
+    <Content Include="TeacherDashboard\logOut.aspx" />
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
     <Content Include="about.aspx" />
@@ -2380,6 +2382,20 @@
     <Compile Include="TeacherDashboard\uploadBulk.aspx.designer.cs">
       <DependentUpon>uploadBulk.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TeacherDashboard\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherDashboard\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDashboard\logOut.aspx.cs">
+      <DependentUpon>logOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherDashboard\logOut.aspx.designer.cs">
+      <DependentUpon>logOut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="teacherLogin.aspx.cs">
       <DependentUpon>teacherLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2389,22 +2405,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bootstrap\css\bootstrap-grid.css.map" />
-    <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap-grid.rtl.css.map" />
-    <Content Include="bootstrap\css\bootstrap-grid.rtl.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
-    <Content Include="bootstrap\css\bootstrap-reboot.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap-reboot.rtl.css.map" />
-    <Content Include="bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap-utilities.css.map" />
-    <Content Include="bootstrap\css\bootstrap-utilities.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap-utilities.rtl.css.map" />
-    <Content Include="bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap.css.map" />
-    <Content Include="bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap.rtl.css.map" />
-    <Content Include="bootstrap\css\bootstrap.rtl.min.css.map" />
     <Content Include="bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="bootstrap\js\bootstrap.esm.js.map" />
@@ -2469,6 +2469,22 @@
     <Content Include="materialIcons\MaterialIconsTwoTone-Regular.otf" />
     <Content Include="AdminDashboard\main.Master" />
     <Content Include="AdminDashboard\format\facultyFormat.csv" />
+    <Content Include="bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap.rtl.min.css.map" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="StudentDashboard\main.Master" />

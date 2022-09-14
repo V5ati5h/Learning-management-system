@@ -2,4 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+        <asp:label CssClass="text-center" id="libmsg" runat="server" Text="result"></asp:label>
+        <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Remove session" OnClick="Button1_Click" />
+    </div>
 </asp:Content>

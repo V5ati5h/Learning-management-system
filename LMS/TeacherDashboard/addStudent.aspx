@@ -45,7 +45,7 @@
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="bacicinfo-tab" data-bs-toggle="tab" data-bs-target="#bacicinfo" type="button" role="tab" aria-controls="basicinfo" aria-selected="true">Basic Infromation</button>
 							</li>
-							<li class="nav-item" role="presentation">
+							<!-- <li class="nav-item" role="presentation">
 								<button class="nav-link" id="parentsdetails-tab" data-bs-toggle="tab" data-bs-target="#parentsdetails" type="button" role="tab" aria-controls="socialmedia" aria-selected="false">Parent/Guardian Details</button>
 							</li>
 							<li class="nav-item" role="presentation">
@@ -53,7 +53,7 @@
 							</li>
 							<li class="nav-item" role="presentation">
 								<button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button" role="tab" aria-controls="documents" aria-selected="false">Documents</button>
-							</li>
+							</li> -->
 						</ul>
 						<!-- Tab panes -->
 						<div class="tab-content">
@@ -65,24 +65,24 @@
 											<label for="txtAdorGiNo">Adm/GR No.</label>
 										</div>
 									</div>
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtRollNo" runat="server" placeholder="Roll Number"></asp:TextBox>
 											<label for="txtRollNo">Roll Number</label>
 										</div>
-									</div>
+									</div> -->
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtClass" runat="server" placeholder="Class"></asp:TextBox>
 											<label for="txtClass">Class</label>
 										</div>
 									</div>
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtSection" runat="server" placeholder="Section"></asp:TextBox>
 											<label for="txtSection">Section</label>
 										</div>
-									</div>
+									</div> -->
 								</div>
 								<div class="row">
 									<div class="col">
@@ -106,14 +106,14 @@
 											<label for="txtLastName">Last Name</label>
 										</div>
 									</div>
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtDateOfBirth" runat="server" placeholder="Date Of Birth"></asp:TextBox>
 											<label for="txtDateOfBirth">Date Of Birth</label>
 										</div>
-									</div>
+									</div> -->
 								</div>
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtFirstNameReg" runat="server" placeholder="First Name (Other Language)"></asp:TextBox>
@@ -251,26 +251,26 @@
 											<label for="txtAsOnDate">As On Date</label>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="row">
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtAddmissionDate" runat="server" placeholder="Addmission Date"></asp:TextBox>
 											<label for="txtAddmissionDate">Addmission Date</label>
 										</div>
-									</div>
+									</div> -->
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtMobileNo" runat="server" placeholder="Mobile Number" TextMode="Number"></asp:TextBox>
 											<label for="txtMobileNo">Mobile Number</label>
 										</div>
 									</div>
-									<div class="col">
+									<!-- <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtEmergencyMobileNumber" runat="server" placeholder="Emergency Contact Number" TextMode="Number"></asp:TextBox>
 											<label for="txtEmergencyMobileNumber">Emergency Contact Number</label>
 										</div>
-									</div>
+									</div> -->
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtEmailAddress" runat="server" placeholder="Email Address"></asp:TextBox>
@@ -278,7 +278,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtCurrentAddress" runat="server" TextMode="MultiLine" Height="100" placeholder="Current Address"></asp:TextBox>
@@ -291,7 +291,7 @@
 											<label for="txtPermananetAddress">Permanenet Address</label>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
@@ -307,7 +307,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tab-pane" id="miscellanousdetails" role="tabpanel" aria-labelledby="miscellanousdetails-tab">
+							<!-- <div class="tab-pane" id="miscellanousdetails" role="tabpanel" aria-labelledby="miscellanousdetails-tab">
 								<div class="row">
 									<div class="col">
 										<div class="form-floating mb-3">
@@ -487,11 +487,12 @@
 									<div class="col"> </div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="row form-group ms-5 me-5">
 							<asp:Button CssClass="btn btn-success w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Regester" OnClick="insertData" /> </div>
 					</div>
 				</div>
+					</div>
 			</div>
 		</div>
 	</asp:Content>

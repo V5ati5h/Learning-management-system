@@ -17,9 +17,17 @@ namespace LMS.TeacherDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
-            if (!IsPostBack)
+            if (!this.IsPostBack)
             {
-                loadDepart();
+                if (Session["id"] != null)
+                {
+                    Session["redirectedFrom"] = "Dashboard";
+                    loadDepart();
+                }
+                else
+                {
+                    Response.Redirect("../teacherLogin.aspx");
+                }
             }
         }
 
@@ -40,7 +48,7 @@ namespace LMS.TeacherDashboard
         {
             int DepartId = Convert.ToInt32(ddDepart.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where Did=" + DepartId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departID=" + DepartId, conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -66,17 +74,17 @@ namespace LMS.TeacherDashboard
 
         protected void ddSem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sem = Convert.ToString(ddSem.SelectedItem).Replace(" ", "") + DateTime.Now.Year.ToString();
-            libmsg.Visible = true;
-            libmsg.Text = sem;
+            //sem = "usp_" + Convert.ToString(ddSem.SelectedItem).Replace(" ", "") + "_insert";
+            //libmsg.Visible = true;
+            //libmsg.Text = sem;
         }
 
         protected void insertData(object sender, EventArgs e)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("INSERT INTO " + sem + " (Fname, Mname,Lname, Mobile, Email, Username, Password, Semid, SClass) VALUES (@Fname, @Mname, @Lname, @Mobile, @Email, @Username, @Password, @Semid, @SClass)", conn);
-                cmd.CommandType = CommandType.Text;
+                SqlCommand cmd = new SqlCommand("usp_sem_insert", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Fname", txtFirstName.Text);
                 cmd.Parameters.AddWithValue("@Mname", txtMiddeletName.Text);
                 cmd.Parameters.AddWithValue("@Lname", txtLastName.Text);

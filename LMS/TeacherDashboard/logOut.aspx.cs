@@ -7,15 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace LMS.TeacherDashboard
 {
-    public partial class main : System.Web.UI.MasterPage
+    public partial class WebForm8 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
-
-        protected void iconh_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
 
         }
     }

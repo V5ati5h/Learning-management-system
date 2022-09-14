@@ -23,7 +23,7 @@ header {
     overflow: hidden;
 }
 
-.holderMain{
+.holderMain {
     padding-left: 6.5rem;
 }
 
@@ -58,21 +58,21 @@ header {
     transition: all 200ms ease-in;
 }
 
-.card{
+.card {
     border-radius: 1rem;
 }
 
-.card .card-header{
-    border-radius: 1rem 1rem 0rem 0rem;
-}
+    .card .card-header {
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
 
-.card .card-footer{
-    border-radius: 0rem 0rem 1rem 1rem;
-}
+    .card .card-footer {
+        border-radius: 0rem 0rem 1rem 1rem;
+    }
 
-.card .card-header ul li{
-    border-radius: 100px;
-}
+    .card .card-header ul li {
+        border-radius: 100px;
+    }
 
 #ana {
     transition: all 200ms ease-in;
@@ -80,20 +80,20 @@ header {
     font-size: 1rem;
 }
 
-#ana:hover {
-    font-size: 1.2rem;
-    transition: all 200ms ease-in;
-}
+    #ana:hover {
+        font-size: 1.2rem;
+        transition: all 200ms ease-in;
+    }
 
 #iconh {
     color: var(--primary);
     text-decoration: bold;
 }
 
-#iconh:hover {
-    color: var(--primaryLight);
-    transition: all 200ms ease-in;
-}
+    #iconh:hover {
+        color: var(--primaryLight);
+        transition: all 200ms ease-in;
+    }
 
 ul li {
     list-style-type: none;
@@ -108,6 +108,7 @@ ul li {
         padding-left: 0rem;
         padding-bottom: 3rem;
     }
+
     header {
         display: flex;
         background-color: var(--light);

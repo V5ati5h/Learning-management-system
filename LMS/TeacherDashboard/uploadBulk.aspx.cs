@@ -19,9 +19,17 @@ namespace LMS.TeacherDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
-            if (!IsPostBack)
+            if (!this.IsPostBack)
             {
-                loadDepart();
+                if (Session["id"] != null)
+                {
+                    loadDepart();
+                    Session["redirectedFrom"] = "Dashboard";
+                }
+                else
+                {
+                    Response.Redirect("../teacherLogin.aspx");
+                }
             }
         }
 
@@ -42,7 +50,7 @@ namespace LMS.TeacherDashboard
         {
             int DepartId = Convert.ToInt32(ddDepart.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Class where Did=" + DepartId, conn);
+            SqlCommand cmd = new SqlCommand("select * from tbl_Class where departID=" + DepartId, conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -68,7 +76,7 @@ namespace LMS.TeacherDashboard
 
         protected void ddSem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sem = Convert.ToString(ddSem.SelectedItem).Replace(" ", "") + DateTime.Now.Year.ToString();
+            sem = "tbl_" + Convert.ToString(ddSem.SelectedItem).Replace(" ", "");
         }
         private void InsertCSVRecords(DataTable csvdt)
         {

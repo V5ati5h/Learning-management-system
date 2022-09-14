@@ -11,7 +11,17 @@ namespace LMS.TeacherDashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!this.IsPostBack)
+            {
+                if (Session["id"] != null)
+                {
+                    Session["redirectedFrom"] = "Dashboard";
+                }
+                else
+                {
+                    Response.Redirect("../teacherLogin.aspx");
+                }
+            }
         }
     }
 }
