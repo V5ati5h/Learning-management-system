@@ -18,7 +18,7 @@ namespace LMS.TeacherDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null)
+                if (Session["id"] != null && Session["redirectedFrom"] != null )
                 {
                     libmsg.Text = Session["id"].ToString();
                     Session["redirectedFrom"] = "Dashboard";

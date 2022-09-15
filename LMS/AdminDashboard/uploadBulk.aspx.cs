@@ -18,6 +18,17 @@ namespace LMS.AdminDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
+            if (!this.IsPostBack)
+            {
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                {
+
+                }
+                else
+                {
+                    Response.Redirect("../adminLogin.aspx");
+                }
+            }
         }
 
         private void InsertCSVRecords(DataTable csvdt)

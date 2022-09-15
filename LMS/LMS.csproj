@@ -70,13 +70,15 @@
     <Content Include="AdminDashboard\default.aspx" />
     <Content Include="AdminDashboard\faculty.aspx" />
     <Content Include="AdminDashboard\img\xlsx.png" />
-    <Content Include="AdminDashboard\others.aspx" />
     <Content Include="AdminDashboard\addFaculty.aspx" />
     <Content Include="AdminDashboard\uploadBulk.aspx" />
     <Content Include="AdminDashboard\regester.aspx" />
     <Content Include="AdminDashboard\addDept.aspx" />
     <Content Include="AdminDashboard\addClass.aspx" />
     <Content Include="AdminDashboard\addSem.aspx" />
+    <Content Include="AdminDashboard\addDiv.aspx" />
+    <Content Include="AdminDashboard\leave.aspx" />
+    <Content Include="AdminDashboard\feedback.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
@@ -2199,13 +2201,6 @@
     <Compile Include="AdminDashboard\faculty.aspx.designer.cs">
       <DependentUpon>faculty.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminDashboard\others.aspx.cs">
-      <DependentUpon>others.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminDashboard\others.aspx.designer.cs">
-      <DependentUpon>others.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AdminDashboard\addFaculty.aspx.cs">
       <DependentUpon>addFaculty.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2247,6 +2242,27 @@
     </Compile>
     <Compile Include="AdminDashboard\addSem.aspx.designer.cs">
       <DependentUpon>addSem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\addDiv.aspx.cs">
+      <DependentUpon>addDiv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\addDiv.aspx.designer.cs">
+      <DependentUpon>addDiv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

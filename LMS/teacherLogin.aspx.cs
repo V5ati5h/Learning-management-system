@@ -22,7 +22,7 @@ namespace LMS
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("select * from Tbl_Faculty where Username = @Username and password = @password", conn);
+                SqlCommand cmd = new SqlCommand("select * from Tbl_Staff where Username = @Username and password = @password", conn);
                 cmd.Parameters.AddWithValue("@Username", txtlogusername.Text);
                 cmd.Parameters.AddWithValue("@password", txtlogpassword.Text);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -34,7 +34,7 @@ namespace LMS
                 if (dt.Rows.Count > 0)
                 {
                     Session["id"] = txtlogusername.Text;
-                    Session["redirectedFrom"] = "Login";
+                    Session["redirectedFrom"] = "TeachLogin";
                     Response.Redirect("./TeacherDashboard/profile.aspx");
                 }
                 else

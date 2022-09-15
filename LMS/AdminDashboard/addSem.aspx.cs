@@ -17,6 +17,17 @@ namespace LMS.AdminDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
+            if (!this.IsPostBack)
+            {
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                {
+                    loadDepart();
+                }
+                else
+                {
+                    Response.Redirect("../adminLogin.aspx");
+                }
+            }
             if (!IsPostBack)
             {
                 loadDepart();
@@ -26,11 +37,11 @@ namespace LMS.AdminDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Depart", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Department", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "Dname";
-            ddDepart.DataValueField = "Did";
+            ddDepart.DataTextField = "departmentName";
+            ddDepart.DataValueField = "departmentId";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -38,9 +49,8 @@ namespace LMS.AdminDashboard
 
         protected void ddDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int DepartId = Convert.ToInt32(ddDepart.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Class where departID=" + DepartId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departmentName=" + "'"+ ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -54,11 +64,10 @@ namespace LMS.AdminDashboard
         {
             try
             {
-                int classId = Convert.ToInt32(ddClass.SelectedValue);
-                SqlCommand cmd = new SqlCommand("usp_Sem", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Sem_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@semName", CSem.Text);
-                cmd.Parameters.AddWithValue("@classID", classId);
+                cmd.Parameters.AddWithValue("@className", ddClass.SelectedItem.ToString());
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)

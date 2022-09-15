@@ -51,6 +51,16 @@
 							<p class="navitemlabel" id="iconh">Faculty</p>
 						</a>
 					</li>
+					<li class="navitem">
+						<a href="leave.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
+							<p class="navitemlabel" id="iconh">Leave Reports</p>
+						</a>
+					</li>
+					<li class="navitem">
+						<a href="feedback.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
+							<p class="navitemlabel" id="iconh">Feedbacks</p>
+						</a>
+					</li>
 					<li class="navitem" id="umm">
 						<a href="defaultSuperAdmin.aspx" id="ana"> <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
 							<p class="navitemlabel" id="iconh">Log out</p>

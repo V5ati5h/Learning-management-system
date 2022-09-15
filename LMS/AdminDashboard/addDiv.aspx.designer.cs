@@ -11,7 +11,7 @@ namespace LMS.AdminDashboard
 {
 
 
-    public partial class WebForm9
+    public partial class WebForm2
     {
 
         /// <summary>
@@ -33,13 +33,31 @@ namespace LMS.AdminDashboard
         protected global::System.Web.UI.WebControls.DropDownList ddDepart;
 
         /// <summary>
-        /// CClass control.
+        /// ddClass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CClass;
+        protected global::System.Web.UI.WebControls.DropDownList ddClass;
+
+        /// <summary>
+        /// ddSem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddSem;
+
+        /// <summary>
+        /// CDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CDiv;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -51,22 +69,40 @@ namespace LMS.AdminDashboard
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// ClassSubmit control.
+        /// CDivSeats control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ClassSubmit;
+        protected global::System.Web.UI.WebControls.TextBox CDivSeats;
 
         /// <summary>
-        /// GridView control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
+        /// DivSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DivSubmit;
+
+        /// <summary>
+        /// gridview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridview;
 
         /// <summary>
         /// SqlDataSource1 control.

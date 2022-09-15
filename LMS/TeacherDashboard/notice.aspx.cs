@@ -13,7 +13,7 @@ namespace LMS.TeacherDashboard
         {
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null)
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
                 {
                     Session["redirectedFrom"] = "Dashboard";
                 }

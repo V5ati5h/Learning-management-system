@@ -16,6 +16,17 @@ namespace LMS.AdminDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
+            if (!this.IsPostBack)
+            {
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                {
+
+                }
+                else
+                {
+                    Response.Redirect("../adminLogin.aspx");
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

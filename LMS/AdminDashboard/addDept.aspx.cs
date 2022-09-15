@@ -17,15 +17,26 @@ namespace LMS.AdminDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
+            if (!this.IsPostBack)
+            {
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                {
+
+                }
+                else
+                {
+                    Response.Redirect("../adminLogin.aspx");
+                }
+            }
         }
 
         protected void DepartSubmit_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_Depart", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Department_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@DName", Cdisc.Text);
+                cmd.Parameters.AddWithValue("@departmentName", Cdisc.Text);
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)

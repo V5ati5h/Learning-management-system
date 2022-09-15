@@ -17,23 +17,34 @@ namespace LMS.AdminDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
+            if (!this.IsPostBack)
+            {
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                {
+
+                }
+                else
+                {
+                    Response.Redirect("../adminLogin.aspx");
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_Faculty", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Staff_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Fname", txtfname.Text);
-                cmd.Parameters.AddWithValue("@Mname", txtmname.Text);
-                cmd.Parameters.AddWithValue("@Lname", txtlname.Text);
-                cmd.Parameters.AddWithValue("@Mobile", txtmobileno.Text);
-                cmd.Parameters.AddWithValue("@Email", txtemailaddress.Text);
-                cmd.Parameters.AddWithValue("@Username", txtusername.Text);
-                cmd.Parameters.AddWithValue("@Password", txtpassword.Text);
-                cmd.Parameters.AddWithValue("@Did", txtdept.Text);
-                cmd.Parameters.AddWithValue("@deptname", txtdeptname.Text);
+                cmd.Parameters.AddWithValue("@fname", txtfname.Text);
+                cmd.Parameters.AddWithValue("@mname", txtmname.Text);
+                cmd.Parameters.AddWithValue("@lname", txtlname.Text);
+                cmd.Parameters.AddWithValue("@mobile", txtmobileno.Text);
+                cmd.Parameters.AddWithValue("@email", txtemailaddress.Text);
+                cmd.Parameters.AddWithValue("@username", txtusername.Text);
+                cmd.Parameters.AddWithValue("@password", txtpassword.Text);
+                cmd.Parameters.AddWithValue("@did", txtdept.Text);
+                cmd.Parameters.AddWithValue("@dname", txtdeptname.Text);
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)
@@ -41,7 +52,7 @@ namespace LMS.AdminDashboard
                     libmsg.Visible = true;
                     libmsg.Text = "Record Insert Successfully into the Database";
                     libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    //Response.Redirect("default.aspx");
+                    Response.Redirect("faculty.aspx");
 
                 }
                 conn.Close();

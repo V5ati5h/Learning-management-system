@@ -19,7 +19,7 @@ namespace LMS.TeacherDashboard
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack) {
-                if (Session["id"] != null)
+                if (Session["id"] != null && Session["redirectedFrom"] != null)
                 {
                     Label1.Text = Session["id"].ToString();
                     loadData();
@@ -36,22 +36,22 @@ namespace LMS.TeacherDashboard
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("select * from Tbl_Faculty where Username = @Username", conn);
-                cmd.Parameters.AddWithValue("@Username", Label1.Text);
+                SqlCommand cmd = new SqlCommand("select * from Tbl_Staff where username = @username", conn);
+                cmd.Parameters.AddWithValue("@username", Label1.Text);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    txtdept.Text = dr["did"].ToString();
-                    txtdeptname.Text = dr["deptname"].ToString();
-                    txtfname.Text = dr["Fname"].ToString();
-                    txtmname.Text = dr["Mname"].ToString();
-                    txtlname.Text = dr["Lname"].ToString();
-                    txtmobileno.Text = dr["Mobile"].ToString();
-                    txtemailaddress.Text = dr["Email"].ToString();
-                    txtusername.Text = dr["Username"].ToString();
-                    txtpassword.Text = dr["Password"].ToString();
+                    txtdept.Text = dr["departmentId"].ToString();
+                    txtdeptname.Text = dr["departmentName"].ToString();
+                    txtfname.Text = dr["firstName"].ToString();
+                    txtmname.Text = dr["middleName"].ToString();
+                    txtlname.Text = dr["lastName"].ToString();
+                    txtmobileno.Text = dr["mobile"].ToString();
+                    txtemailaddress.Text = dr["email"].ToString();
+                    txtusername.Text = dr["username"].ToString();
+                    txtpassword.Text = dr["password"].ToString();
                 }
-                if (!(txtpassword.Text == "12345") && Session["redirectedFrom"].ToString() == "Login")
+                if (!(txtpassword.Text == "12345") && Session["redirectedFrom"].ToString() == "TeachLogin")
                 {
                     Response.Redirect("default.aspx");
                 }
@@ -70,7 +70,7 @@ namespace LMS.TeacherDashboard
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update Tbl_Faculty set Fname='" + txtfname.Text  + "', Mname='" + txtmname.Text + "', Lname='" + txtlname.Text + "', Mobile='" + txtmobileno.Text + "', Email='" + txtemailaddress.Text  + "' , Password='" + txtpassword.Text + "' where Username='" + Label1.Text + "'", conn);
+                SqlCommand cmd = new SqlCommand("update Tbl_Staff set firstName='" + txtfname.Text  + "', middleName='" + txtmname.Text + "', lastName='" + txtlname.Text + "', mobile='" + txtmobileno.Text + "', email='" + txtemailaddress.Text  + "' , password='" + txtpassword.Text + "' where username='" + Label1.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 Session.Abandon();
