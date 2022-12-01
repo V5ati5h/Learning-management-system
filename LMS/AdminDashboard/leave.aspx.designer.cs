@@ -15,21 +15,21 @@ namespace LMS.AdminDashboard
     {
 
         /// <summary>
-        /// gridview control.
+        /// ddMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridview;
+        protected global::System.Web.UI.WebControls.DropDownList ddMain;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

@@ -42,6 +42,15 @@ namespace LMS.TeacherDashboard
         protected global::System.Web.UI.WebControls.DropDownList ddSem;
 
         /// <summary>
+        /// ddDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddDiv;
+
+        /// <summary>
         /// txt_Upload control.
         /// </summary>
         /// <remarks>

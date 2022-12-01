@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TeacherDashboard/main.Master" AutoEventWireup="true" CodeBehind="addStudent.aspx.cs" Inherits="LMS.TeacherDashboard.WebForm5" %>
-	<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> </asp:Content>
+	<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 	<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-		<div class="row mb-0">
+	<div class="row mb-0">
 			<div class="col">
 				<div class="form-floating mb-3">
 					<asp:DropDownList CssClass="form-control" ID="ddDepart" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddDepart_SelectedIndexChanged">
@@ -24,6 +24,14 @@
 						<asp:ListItem>Select Semister</asp:ListItem>
 					</asp:DropDownList>
 					<label for="ddSem">Semester</label>
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-floating mb-3">
+					<asp:DropDownList CssClass="form-control" ID="ddDiv" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddDiv_SelectedIndexChanged">
+						<asp:ListItem>Select Division</asp:ListItem>
+					</asp:DropDownList>
+					<label for="ddDiv">Division</label>
 				</div>
 			</div>
 		</div>
@@ -65,19 +73,19 @@
 											<label for="txtAdorGiNo">Adm/GR No.</label>
 										</div>
 									</div>
-									<!-- <div class="col">
+									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtRollNo" runat="server" placeholder="Roll Number"></asp:TextBox>
 											<label for="txtRollNo">Roll Number</label>
 										</div>
-									</div> -->
-									<div class="col">
+									</div>
+									<!--  <div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtClass" runat="server" placeholder="Class"></asp:TextBox>
 											<label for="txtClass">Class</label>
 										</div>
 									</div>
-									<!-- <div class="col">
+									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtSection" runat="server" placeholder="Section"></asp:TextBox>
 											<label for="txtSection">Section</label>
@@ -106,12 +114,12 @@
 											<label for="txtLastName">Last Name</label>
 										</div>
 									</div>
-									<!-- <div class="col">
+									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtDateOfBirth" runat="server" placeholder="Date Of Birth"></asp:TextBox>
 											<label for="txtDateOfBirth">Date Of Birth</label>
 										</div>
-									</div> -->
+									</div>
 								</div>
 								<!-- <div class="row">
 									<div class="col">

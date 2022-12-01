@@ -33,7 +33,7 @@ namespace LMS
                 conn.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    Session["id"] = txtlogusername.Text;
+                    Session["Tid"] = txtlogusername.Text;
                     Session["redirectedFrom"] = "TeachLogin";
                     Response.Redirect("./TeacherDashboard/profile.aspx");
                 }

@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminDashboard/main.Master" AutoEventWireup="true" CodeBehind="faculty.aspx.cs" Inherits="LMS.AdminDashboard.WebForm3" %>
 	<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> </asp:Content>
 	<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="row mb-0">
-			<div class="row">
+        <div class="row">
+			<div class="col mb-2">
 				<div class="card p-0">
 					<div class="card-header text-light d-flex justify-content-between align-items-center bg-danger fw-bold">Faculty List
 						<asp:Button ID="Button4" class="btn btn-outline-light" runat="server" Text="Add New" OnClick="Button1_Click"></asp:Button>
@@ -23,7 +23,7 @@
                                 <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
                             </Columns>
                         </asp:GridView>
-					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Staff]" DeleteCommand="DELETE FROM [Tbl_Staff] WHERE staffId=@staffId"></asp:SqlDataSource>
+					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Staff]" UpdateCommand="UPDATE Tbl_Staff SET firstName=@firstName,middleName=@middleName,lastName=@lastName,mobile=@mobile,email=@email,username=@username,password=@password,departmentId=@departmentId,departmentName=@departmentName WHERE staffId=@staffId" DeleteCommand="DELETE FROM [Tbl_Staff] WHERE staffId=@staffId"></asp:SqlDataSource>
 					</div>
 				</div>
 			</div>

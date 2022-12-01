@@ -13,5 +13,10 @@ namespace LMS.AdminDashboard
         {
 
         }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("logout.aspx");
+        }
     }
 }

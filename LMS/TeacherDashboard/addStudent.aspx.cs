@@ -19,7 +19,7 @@ namespace LMS.TeacherDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Tid"] != null && Session["redirectedFrom"] != null)
                 {
                     Session["redirectedFrom"] = "Dashboard";
                     loadDepart();
@@ -34,11 +34,11 @@ namespace LMS.TeacherDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Depart", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Department", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "Dname";
-            ddDepart.DataValueField = "Did";
+            ddDepart.DataTextField = "departmentName";
+            ddDepart.DataValueField = "departmentId";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -46,9 +46,8 @@ namespace LMS.TeacherDashboard
 
         protected void ddDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int DepartId = Convert.ToInt32(ddDepart.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departID=" + DepartId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departmentName=" + "'" + ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -60,13 +59,12 @@ namespace LMS.TeacherDashboard
 
         protected void ddClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ClassId = Convert.ToInt32(ddClass.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Sem where classID=" + ClassId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Sem where className=" + "'" + ddClass.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddSem.DataSource = cmd.ExecuteReader();
             ddSem.DataTextField = "semName";
-            ddSem.DataValueField = "semID";
+            ddSem.DataValueField = "semId";
             ddSem.DataBind();
             ddSem.Items.Insert(0, new ListItem("Select Semister", "0"));
             conn.Close();
@@ -74,7 +72,20 @@ namespace LMS.TeacherDashboard
 
         protected void ddSem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //sem = "usp_" + Convert.ToString(ddSem.SelectedItem).Replace(" ", "") + "_insert";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Div where semName=" + "'" + ddSem.SelectedItem + "'", conn);
+            cmd.CommandType = CommandType.Text;
+            ddDiv.DataSource = cmd.ExecuteReader();
+            ddDiv.DataTextField = "divName";
+            ddDiv.DataValueField = "divId";
+            ddDiv.DataBind();
+            ddDiv.Items.Insert(0, new ListItem("Select Div", "0"));
+            conn.Close();
+        }
+
+        protected void ddDiv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //sem = "usp_" + Convert.ToString(ddDiv.SelectedItem).Replace(" ", "") + "_insert";
             //libmsg.Visible = true;
             //libmsg.Text = sem;
         }
@@ -83,17 +94,22 @@ namespace LMS.TeacherDashboard
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_sem_insert", conn);
+                SqlCommand cmd = new SqlCommand("usp_Student_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Fname", txtFirstName.Text);
-                cmd.Parameters.AddWithValue("@Mname", txtMiddeletName.Text);
-                cmd.Parameters.AddWithValue("@Lname", txtLastName.Text);
-                cmd.Parameters.AddWithValue("@Mobile", txtMobileNo.Text);
-                cmd.Parameters.AddWithValue("@Email", txtMobileNo.Text);
-                cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-                cmd.Parameters.AddWithValue("@Semid", txtAdorGiNo.Text);
-                cmd.Parameters.AddWithValue("@SClass", txtClass.Text);
+                cmd.Parameters.AddWithValue("@grNo", txtAdorGiNo.Text);
+                cmd.Parameters.AddWithValue("@rollNo", txtRollNo.Text);
+                cmd.Parameters.AddWithValue("@fname", txtFirstName.Text);
+                cmd.Parameters.AddWithValue("@mname", txtMiddeletName.Text);
+                cmd.Parameters.AddWithValue("@lname", txtLastName.Text);
+                cmd.Parameters.AddWithValue("@depart", Convert.ToString(ddDepart.SelectedItem));
+                cmd.Parameters.AddWithValue("@semname", Convert.ToString(ddSem.SelectedItem));
+                cmd.Parameters.AddWithValue("@classname", Convert.ToString(ddClass.SelectedItem));
+                cmd.Parameters.AddWithValue("@divName", Convert.ToString(ddDiv.SelectedItem));
+                cmd.Parameters.AddWithValue("@email", txtEmailAddress.Text);
+                cmd.Parameters.AddWithValue("@mobile", txtMobileNo.Text);
+                cmd.Parameters.AddWithValue("@dob", txtDateOfBirth.Text);
+                cmd.Parameters.AddWithValue("@uname", txtUsername.Text);
+                cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)

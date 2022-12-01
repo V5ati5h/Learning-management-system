@@ -60,15 +60,6 @@ namespace LMS.AdminDashboard
         protected global::System.Web.UI.WebControls.TextBox CDiv;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-        /// <summary>
         /// CDivSeats control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace LMS.AdminDashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CDivSeats;
-
-        /// <summary>
-        /// RequiredFieldValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// DivSubmit control.
@@ -96,13 +78,13 @@ namespace LMS.AdminDashboard
         protected global::System.Web.UI.WebControls.Button DivSubmit;
 
         /// <summary>
-        /// gridview control.
+        /// gridview1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridview;
+        protected global::System.Web.UI.WebControls.GridView gridview1;
 
         /// <summary>
         /// SqlDataSource1 control.

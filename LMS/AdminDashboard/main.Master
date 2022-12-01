@@ -32,11 +32,12 @@
 				color: var(--primary);
 			}
 			</style>
-			<header> <img src="../img/avatar.png" class="avatarIcon">
+			<header id="hadd"> <img src="../img/avatar.png" class="avatarIcon" />
 				<label class="card-body display-7 fw-bold ls-tight"> Good morning,
 					<br /><span class="text-danger" id="iconh"> Admin</span> </label>
+				<asp:Button ID="btn1" CssClass="btn btn-danger fw-bold" runat="server" Text="Log Out" OnClick="btn1_Click" />
 			</header>
-			<navbar class="nav">
+			<navbar class="nav" id="naav">
 				<ul class="navlist">
 					<li class="navitem" id="umm">
 						<a href="#" id="ana"> <img src="../img/avatar.png" class="avatarIcon"> </a>
@@ -62,13 +63,14 @@
 						</a>
 					</li>
 					<li class="navitem" id="umm">
-						<a href="defaultSuperAdmin.aspx" id="ana"> <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
+						<a href="logout.aspx" id="ana">
+							<i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
 							<p class="navitemlabel" id="iconh">Log out</p>
 						</a>
 					</li>
 				</ul>
 			</navbar>
-			<section class="holderMain">
+			<section class="holderMain" id="holdkaar">
 				<div class="container-fluid p-3 gap-1">
 					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
 				</div>

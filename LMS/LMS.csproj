@@ -79,6 +79,7 @@
     <Content Include="AdminDashboard\addDiv.aspx" />
     <Content Include="AdminDashboard\leave.aspx" />
     <Content Include="AdminDashboard\feedback.aspx" />
+    <Content Include="AdminDashboard\logout.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
@@ -101,6 +102,8 @@
     <Content Include="bootstrap\js\bootstrap.esm.min.js" />
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <None Include="bootstrap\js\popper.min.js.map" />
+    <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="css\sstyle.css" />
     <Content Include="css\style.css" />
     <Content Include="fontawsome\css\all.css" />
@@ -2170,7 +2173,9 @@
     <Content Include="TeacherDashboard\addStudent.aspx" />
     <Content Include="TeacherDashboard\uploadBulk.aspx" />
     <Content Include="TeacherDashboard\profile.aspx" />
-    <Content Include="TeacherDashboard\logOut.aspx" />
+    <Content Include="TeacherDashboard\logout.aspx" />
+    <Content Include="TeacherDashboard\attendence.aspx" />
+    <Content Include="TeacherDashboard\addAttendence.aspx" />
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
     <Content Include="about.aspx" />
@@ -2263,6 +2268,13 @@
     </Compile>
     <Compile Include="AdminDashboard\feedback.aspx.designer.cs">
       <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -2405,12 +2417,26 @@
     <Compile Include="TeacherDashboard\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TeacherDashboard\logOut.aspx.cs">
-      <DependentUpon>logOut.aspx</DependentUpon>
+    <Compile Include="TeacherDashboard\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TeacherDashboard\logOut.aspx.designer.cs">
-      <DependentUpon>logOut.aspx</DependentUpon>
+    <Compile Include="TeacherDashboard\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDashboard\attendence.aspx.cs">
+      <DependentUpon>attendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherDashboard\attendence.aspx.designer.cs">
+      <DependentUpon>attendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDashboard\addAttendence.aspx.cs">
+      <DependentUpon>addAttendence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherDashboard\addAttendence.aspx.designer.cs">
+      <DependentUpon>addAttendence.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacherLogin.aspx.cs">
       <DependentUpon>teacherLogin.aspx</DependentUpon>
@@ -2501,6 +2527,7 @@
     <Content Include="bootstrap\css\bootstrap.min.css.map" />
     <Content Include="bootstrap\css\bootstrap.rtl.css.map" />
     <Content Include="bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap\js\jquery-3.6.0.min.js" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="StudentDashboard\main.Master" />
@@ -2512,7 +2539,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="studentImg\" />
+    <Folder Include="teacherImg\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

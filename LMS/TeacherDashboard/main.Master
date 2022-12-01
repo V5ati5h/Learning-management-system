@@ -33,9 +33,10 @@
 			}
 			</style>
 			<header> <a href="profile.aspx" id="ana">
-				<img src="img/avatar.png" class="avatarIcon"></a>
+				<img src="../img/avatar.png" class="avatarIcon" /></a>
 				<label class="card-body display-7 fw-bold ls-tight"> Good morning,
 					<br /><span class="text-success"> Student</span> </label>
+				<asp:Button ID="btn1" CssClass="btn btn-success fw-bold" runat="server" Text="Log Out" OnClick="btn_Click"/>
 			</header>
 			<navbar class="nav">
 				<ul class="navlist">
@@ -66,8 +67,9 @@
 						</a>
 					</li>
 					<li class="navitem" id="umm">
-						<a href="default.aspx" id="ana"> <i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
-							<asp:Button class="navitemlabel" id="iconh" OnClick="iconh_Click">Log out</asp:Button>
+						<a href="logout.aspx" id="ana">
+							<i class="fa-solid fa-arrow-right-from-bracket" id="iconh"></i>
+							<p class="navitemlabel" id="iconh">Log out</p>
 						</a>
 					</li>
 				</ul>

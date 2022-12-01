@@ -13,10 +13,9 @@ namespace LMS.TeacherDashboard
         {
         }
 
-        protected void iconh_Click(object sender, EventArgs e)
+        protected void btn_Click(object sender, EventArgs e)
         {
-            Session.Abandon();
-
+            Response.Redirect("logout.aspx");
         }
     }
 }

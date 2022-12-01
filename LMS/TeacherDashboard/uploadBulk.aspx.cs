@@ -21,7 +21,7 @@ namespace LMS.TeacherDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Tid"] != null && Session["redirectedFrom"] != null)
                 {
                     loadDepart();
                     Session["redirectedFrom"] = "Dashboard";
@@ -36,11 +36,11 @@ namespace LMS.TeacherDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Depart", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Department", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "Dname";
-            ddDepart.DataValueField = "Did";
+            ddDepart.DataTextField = "departmentName";
+            ddDepart.DataValueField = "departmentId";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -48,9 +48,8 @@ namespace LMS.TeacherDashboard
 
         protected void ddDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int DepartId = Convert.ToInt32(ddDepart.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Class where departID=" + DepartId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departmentName=" + "'" + ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -62,13 +61,12 @@ namespace LMS.TeacherDashboard
 
         protected void ddClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ClassId = Convert.ToInt32(ddClass.SelectedValue);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Sem where classID=" + ClassId, conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Sem where className=" + "'" + ddClass.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddSem.DataSource = cmd.ExecuteReader();
             ddSem.DataTextField = "semName";
-            ddSem.DataValueField = "semID";
+            ddSem.DataValueField = "semId";
             ddSem.DataBind();
             ddSem.Items.Insert(0, new ListItem("Select Semister", "0"));
             conn.Close();
@@ -76,7 +74,22 @@ namespace LMS.TeacherDashboard
 
         protected void ddSem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sem = "tbl_" + Convert.ToString(ddSem.SelectedItem).Replace(" ", "");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Div where semName=" + "'" + ddSem.SelectedItem + "'", conn);
+            cmd.CommandType = CommandType.Text;
+            ddDiv.DataSource = cmd.ExecuteReader();
+            ddDiv.DataTextField = "divName";
+            ddDiv.DataValueField = "divId";
+            ddDiv.DataBind();
+            ddDiv.Items.Insert(0, new ListItem("Select Div", "0"));
+            conn.Close();
+        }
+
+        protected void ddDiv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //sem = "usp_" + Convert.ToString(ddDiv.SelectedItem).Replace(" ", "") + "_insert";
+            //libmsg.Visible = true;
+            //libmsg.Text = sem;
         }
         private void InsertCSVRecords(DataTable csvdt)
         {
@@ -84,14 +97,22 @@ namespace LMS.TeacherDashboard
             {
                 SqlBulkCopy objbulk = new SqlBulkCopy(conn);
                 objbulk.DestinationTableName = sem;
-                objbulk.ColumnMappings.Add("Fname", "Fname");
-                objbulk.ColumnMappings.Add("Mname", "Mname");
-                objbulk.ColumnMappings.Add("Lname", "Lname");
-                objbulk.ColumnMappings.Add("Mobile", "Mobile");
-                objbulk.ColumnMappings.Add("Email", "Email");
-                objbulk.ColumnMappings.Add("Username", "Username");
-                objbulk.ColumnMappings.Add("Password", "Password");
-                objbulk.ColumnMappings.Add("Did", "Did");
+                objbulk.ColumnMappings.Add("grNo", "grNo");
+                objbulk.ColumnMappings.Add("rollNo", "rollNo");
+                objbulk.ColumnMappings.Add("firstName", "fname");
+                objbulk.ColumnMappings.Add("middleName", "mname");
+                objbulk.ColumnMappings.Add("lastName", "lname");
+                objbulk.ColumnMappings.Add("department", Convert.ToString(ddDepart.SelectedItem));
+                objbulk.ColumnMappings.Add("semName", Convert.ToString(ddSem.SelectedItem));
+                objbulk.ColumnMappings.Add("className", Convert.ToString(ddClass.SelectedItem));
+                objbulk.ColumnMappings.Add("divName", Convert.ToString(ddDiv.SelectedItem));
+                objbulk.ColumnMappings.Add("semClass", "semClass");
+                objbulk.ColumnMappings.Add("divName", "divName");
+                objbulk.ColumnMappings.Add("email", "email");
+                objbulk.ColumnMappings.Add("mobile", "mobile");
+                objbulk.ColumnMappings.Add("dateOfBirth", "dob");
+                objbulk.ColumnMappings.Add("uname", "uname");
+                objbulk.ColumnMappings.Add("pass", "pass");
                 conn.Open();
                 objbulk.WriteToServer(csvdt);
                 Responsehu.Visible = true;

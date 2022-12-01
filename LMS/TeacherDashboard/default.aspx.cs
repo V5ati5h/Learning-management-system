@@ -18,9 +18,9 @@ namespace LMS.TeacherDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null )
+                if (Session["Tid"] != null && Session["redirectedFrom"] != null )
                 {
-                    libmsg.Text = Session["id"].ToString();
+                    libmsg.Text = Session["Tid"].ToString();
                     Session["redirectedFrom"] = "Dashboard";
                 }
                 else
@@ -30,10 +30,9 @@ namespace LMS.TeacherDashboard
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            Session.Abandon();
-            Response.Redirect("../teacherLogin.aspx");
+            Response.Redirect("attendence.aspx");
         }
     }
 }

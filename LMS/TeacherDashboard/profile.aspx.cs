@@ -19,9 +19,9 @@ namespace LMS.TeacherDashboard
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack) {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Tid"] != null && Session["redirectedFrom"] != null)
                 {
-                    Label1.Text = Session["id"].ToString();
+                    Label1.Text = Session["Tid"].ToString();
                     loadData();
                 }
                 else

@@ -11,7 +11,14 @@ namespace LMS.AdminDashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["id"] != null && Session["redirectedFrom"] != null)
+            {
 
+            }
+            else
+            {
+                Response.Redirect("../adminLogin.aspx");
+            }
         }
     }
 }

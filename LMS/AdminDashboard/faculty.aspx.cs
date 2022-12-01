@@ -31,10 +31,5 @@ namespace LMS.AdminDashboard
         {
             Response.Redirect("addFaculty.aspx");
         }
-
-        protected void Gird_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

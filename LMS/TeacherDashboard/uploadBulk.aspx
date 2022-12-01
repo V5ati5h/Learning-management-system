@@ -26,6 +26,14 @@
 					<label for="ddSem">Semester</label>
 				</div>
 			</div>
+			<div class="col">
+				<div class="form-floating mb-3">
+					<asp:DropDownList CssClass="form-control" ID="ddDiv" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddDiv_SelectedIndexChanged">
+						<asp:ListItem>Select Division</asp:ListItem>
+					</asp:DropDownList>
+					<label for="ddDiv">Division</label>
+				</div>
+			</div>
 		</div>
 		<div class="row gap-2">
 			<div class="col-lg-9">

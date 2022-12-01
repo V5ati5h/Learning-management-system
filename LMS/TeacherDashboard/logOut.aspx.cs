@@ -11,7 +11,12 @@ namespace LMS.TeacherDashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session.Abandon();
+        }
 
+        protected void btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../adminLogin.aspx");
         }
     }
 }
