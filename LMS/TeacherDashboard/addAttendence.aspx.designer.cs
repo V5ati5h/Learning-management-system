@@ -78,21 +78,21 @@ namespace LMS.TeacherDashboard
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
 
         /// <summary>
-        /// Button2 control.
+        /// AtdSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button AtdSubmit;
 
         /// <summary>
-        /// gridview control.
+        /// GridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridview;
+        protected global::System.Web.UI.WebControls.GridView GridView;
     }
 }

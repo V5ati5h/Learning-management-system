@@ -74,11 +74,17 @@
                     <Columns>
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="attandenceId" HeaderText="attandenceId" InsertVisible="False" ReadOnly="True" SortExpression="attandenceId" />
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="grNo" HeaderText="grNo" SortExpression="grNo" />
-                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="name" HeaderText="name" SortExpression="name" />
-                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="date" HeaderText="date" SortExpression="date" />
-                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="status" HeaderText="status" SortExpression="status" />
-                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="staffName" HeaderText="staffName" SortExpression="staffName" />
-                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="editDate" HeaderText="editDate" SortExpression="editDate" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="fName" HeaderText="fName" SortExpression="fName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="mName" HeaderText="mName" SortExpression="mName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="lName" HeaderText="lName" SortExpression="lName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="divName" HeaderText="divName" SortExpression="divName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="className" HeaderText="className" SortExpression="className" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light"  DataField="semName" HeaderText="semName" SortExpression="semName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light"  DataField="departName" HeaderText="departName" SortExpression="departName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light"  DataField="status" HeaderText="status" SortExpression="status" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light"  DataField="date" HeaderText="date" SortExpression="date" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light"  DataField="staffName" HeaderText="staffName" SortExpression="staffName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light"  DataField="editDate" HeaderText="editDate" SortExpression="editDate" />
                     </Columns>
 
                 </asp:GridView>

@@ -53,11 +53,16 @@
 						</a>
 					</li>
 					<li class="navitem">
+						<a href="students.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
+							<p class="navitemlabel" id="iconh">Students</p>
+						</a>
+					</li>
+					<li class="navitem">
 						<a href="leave.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
 							<p class="navitemlabel" id="iconh">Leave Reports</p>
 						</a>
 					</li>
-					<li class="navitem">
+					<li class="navitem" id="umm">
 						<a href="feedback.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
 							<p class="navitemlabel" id="iconh">Feedbacks</p>
 						</a>

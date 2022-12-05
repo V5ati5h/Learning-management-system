@@ -19,11 +19,11 @@
                                 <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="email" HeaderText="email" SortExpression="email" />
                                 <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="username" HeaderText="username" SortExpression="username" />
                                 <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="password" HeaderText="password" SortExpression="password" />
-                                <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departmentId" HeaderText="departmentId" SortExpression="departmentId" />
-                                <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                                <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departId" HeaderText="departId" SortExpression="departId" />
+                                <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departName" HeaderText="departName" SortExpression="departName" />
                             </Columns>
                         </asp:GridView>
-					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Staff]" UpdateCommand="UPDATE Tbl_Staff SET firstName=@firstName,middleName=@middleName,lastName=@lastName,mobile=@mobile,email=@email,username=@username,password=@password,departmentId=@departmentId,departmentName=@departmentName WHERE staffId=@staffId" DeleteCommand="DELETE FROM [Tbl_Staff] WHERE staffId=@staffId"></asp:SqlDataSource>
+					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Staff]" UpdateCommand="UPDATE Tbl_Staff SET firstName=@firstName,middleName=@middleName,lastName=@lastName,mobile=@mobile,email=@email,username=@username,password=@password,departmentId=@departId,departName=@departmentName WHERE staffId=@staffId" DeleteCommand="DELETE FROM [Tbl_Staff] WHERE staffId=@staffId"></asp:SqlDataSource>
 					</div>
 				</div>
 			</div>

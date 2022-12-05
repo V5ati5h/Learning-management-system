@@ -15,7 +15,6 @@ namespace LMS.TeacherDashboard
     public partial class WebForm10 : System.Web.UI.Page
     {
         SqlConnection conn;
-        String sem = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
@@ -25,7 +24,6 @@ namespace LMS.TeacherDashboard
                 {
                     Session["redirectedFrom"] = "Dashboard";
                     loadDepart();
-                    loadData("SELECT (grNo, rollNo, image, firstName, middleName, lastName) FROM Tbl_Student");
                 }
                 else
                 {
@@ -37,11 +35,11 @@ namespace LMS.TeacherDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Department", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_depart", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "departmentName";
-            ddDepart.DataValueField = "departmentId";
+            ddDepart.DataTextField = "departName";
+            ddDepart.DataValueField = "departId";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -50,7 +48,7 @@ namespace LMS.TeacherDashboard
         protected void ddDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departmentName=" + "'" + ddDepart.SelectedItem + "'", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departName=" + "'" + ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -63,7 +61,7 @@ namespace LMS.TeacherDashboard
         protected void ddClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Sem where className=" + "'" + ddClass.SelectedItem + "'", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Sem where className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddSem.DataSource = cmd.ExecuteReader();
             ddSem.DataTextField = "semName";
@@ -76,7 +74,7 @@ namespace LMS.TeacherDashboard
         protected void ddSem_SelectedIndexChanged(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Div where semName=" + "'" + ddSem.SelectedItem + "'", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Div where semName=" + "'" + ddSem.SelectedItem + "'" + " and className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddDiv.DataSource = cmd.ExecuteReader();
             ddDiv.DataTextField = "divName";
@@ -88,7 +86,7 @@ namespace LMS.TeacherDashboard
 
         protected void ddDiv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadData("SELECT grNo, rollNo, image, firstName, middleName, lastName FROM Tbl_Student where department=" + "'" + ddDepart.SelectedItem + "'");// + "className=" + "'" + ddClass.SelectedItem + "'" + "semName=" + "'" + ddSem.SelectedItem + "'" + "divName" + "'" + ddDiv.SelectedItem + "'");
+            loadData("SELECT grNo,rollNo,firstName,middleName,lastName,divName,className,semName,departName FROM Tbl_Student WHERE divName=" + "'" + ddDiv.SelectedItem + "' and semName=" + "'" + ddSem.SelectedItem + "'" + " and className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'");
         }
 
         protected void loadData(string queary)
@@ -99,9 +97,33 @@ namespace LMS.TeacherDashboard
             SqlDataAdapter dsa = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             dsa.Fill(dt);
-            gridview.DataSource = dt;
-            gridview.DataBind();
+            GridView.DataSource = dt;
+            GridView.DataBind();
             conn.Close();
+        }
+
+        protected void AtdSubmit_Click(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in GridView.Rows)
+            {
+                DropDownList stats = row.Cells[8].FindControl("drpatt") as DropDownList;
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Attandance_INSERT", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@grNo", row.Cells[0].Text);
+                cmd.Parameters.AddWithValue("@fname", row.Cells[1].Text);
+                cmd.Parameters.AddWithValue("@mname", row.Cells[2].Text);
+                cmd.Parameters.AddWithValue("@lname", row.Cells[3].Text);
+                cmd.Parameters.AddWithValue("@divName", row.Cells[4].Text);
+                cmd.Parameters.AddWithValue("@className", row.Cells[5].Text);
+                cmd.Parameters.AddWithValue("@semName", row.Cells[6].Text);
+                cmd.Parameters.AddWithValue("@departName", row.Cells[7].Text);
+                cmd.Parameters.AddWithValue("@status", stats.SelectedItem.Text);
+                cmd.Parameters.AddWithValue("@date", dateInput.Value);
+                cmd.Parameters.AddWithValue("@staffname", Session["Tid"]);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
         }
     }
 }

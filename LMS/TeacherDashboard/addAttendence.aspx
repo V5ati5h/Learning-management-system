@@ -66,24 +66,26 @@
             <div class="card-header text-light d-flex justify-content-between align-items-center bg-success fw-bold">
                 Students List
 				
-                    <asp:Button ID="Button2" class="btn btn-outline-light" runat="server" Text="Add New"></asp:Button>
+                    <asp:Button ID="AtdSubmit" class="btn btn-outline-light" runat="server" Text="Submit" OnClick="AtdSubmit_Click"></asp:Button>
             </div>
             <div class="card-body m-0 p-0">
-                <!-- <div class="row g-1" id="datatable"></div> -->
-                <asp:GridView ID="gridview" CssClass="table table-striped table-bordered table-sm" runat="server" AutoGenerateColumns="False">
+                <asp:GridView ID="GridView" CssClass="table table-striped table-bordered table-sm" runat="server" AutoGenerateColumns="False" DataKeyNames="grNo" EmptyDataText="Select from drop down">
                     <Columns>
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="grNo" HeaderText="grNo" SortExpression="grNo"  />
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="rollNo" HeaderText="rollNo" SortExpression="rollNo" />
-                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="image" HeaderText="image" SortExpression="image" />
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="middleName" HeaderText="middleName" SortExpression="middleName" />
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
-                        <asp:TemplateField HeaderText="Attendance">
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="divName" HeaderText="divName" SortExpression="divName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="className" HeaderText="className" SortExpression="className" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="semName" HeaderText="semName" SortExpression="semName" />
+                        <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="departName" HeaderText="departName" SortExpression="departName" />
+                        <asp:TemplateField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" HeaderText="Attendance">
                             <ItemTemplate>
                                 <asp:DropDownList ID="drpatt" runat="server">
-                                    <asp:ListItem Text="Present" Value="P"></asp:ListItem>
-                                    <asp:ListItem Text="Absent" Value="A"></asp:ListItem>
-                                    <asp:ListItem Text="Leave" Value="L"></asp:ListItem>
+                                    <asp:ListItem Text="Present" Value="Present"></asp:ListItem>
+                                    <asp:ListItem Text="Absent" Value="Absent"></asp:ListItem>
+                                    <asp:ListItem Text="Leave" Value="Leave"></asp:ListItem>
                                 </asp:DropDownList>
                             </ItemTemplate>
                         </asp:TemplateField>

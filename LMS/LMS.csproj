@@ -80,6 +80,7 @@
     <Content Include="AdminDashboard\leave.aspx" />
     <Content Include="AdminDashboard\feedback.aspx" />
     <Content Include="AdminDashboard\logout.aspx" />
+    <Content Include="AdminDashboard\students.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
@@ -2275,6 +2276,13 @@
     </Compile>
     <Compile Include="AdminDashboard\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\students.aspx.cs">
+      <DependentUpon>students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\students.aspx.designer.cs">
+      <DependentUpon>students.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

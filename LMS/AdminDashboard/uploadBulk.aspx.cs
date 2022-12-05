@@ -15,6 +15,7 @@ namespace LMS.AdminDashboard
     {
         SqlConnection conn;
         string FilePath;
+        FileInfo file;
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
@@ -36,7 +37,7 @@ namespace LMS.AdminDashboard
             try
             {
                 SqlBulkCopy objbulk = new SqlBulkCopy(conn);
-                objbulk.DestinationTableName = "Tbl_Faculty";
+                objbulk.DestinationTableName = "Tbl_Staff";
                // objbulk.ColumnMappings.Add("Fid", "Fid");
                 objbulk.ColumnMappings.Add("Fname","Fname");
                 objbulk.ColumnMappings.Add("Mname","Mname");
@@ -53,11 +54,11 @@ namespace LMS.AdminDashboard
                 Responsehu.Text = "Record Insert Successfully into the Database";
                 Responsehu.ForeColor = System.Drawing.Color.CornflowerBlue;
                 conn.Close();
-                FileInfo file = new FileInfo(FilePath);
-                //if (file.Exists)
-                //{
-                //    file.Delete();
-                //}
+                file = new FileInfo(FilePath);
+                if (file.Exists)
+                {
+                    file.Delete();
+                }
             }
             catch (Exception ex)
             {

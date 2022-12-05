@@ -45,7 +45,7 @@
 
                                 <ItemStyle CssClass="text-center"></ItemStyle>
                             </asp:BoundField>
-                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName">
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departName" HeaderText="departName" SortExpression="departmentName">
                                 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
                                 <ItemStyle CssClass="text-center"></ItemStyle>
@@ -58,7 +58,7 @@
                         </Columns>
 
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Class]" UpdateCommand="UPDATE Tbl_Class SET className=@className, departmentName=@departmentName WHERE classID=@classID" DeleteCommand="DELETE FROM Tbl_Class WHERE classID=@classID"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Class]" UpdateCommand="UPDATE Tbl_Class SET className=@className, departName=@departName WHERE classID=@classID" DeleteCommand="DELETE FROM Tbl_Class WHERE classID=@classID"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

@@ -41,8 +41,8 @@ namespace LMS.TeacherDashboard
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    txtdept.Text = dr["departmentId"].ToString();
-                    txtdeptname.Text = dr["departmentName"].ToString();
+                    txtdept.Text = dr["departId"].ToString();
+                    txtdeptname.Text = dr["departName"].ToString();
                     txtfname.Text = dr["firstName"].ToString();
                     txtmname.Text = dr["middleName"].ToString();
                     txtlname.Text = dr["lastName"].ToString();

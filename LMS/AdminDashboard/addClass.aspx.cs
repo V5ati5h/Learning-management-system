@@ -33,11 +33,11 @@ namespace LMS.AdminDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Department", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_depart", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "departmentName";
-            ddDepart.DataValueField = "departmentId";
+            ddDepart.DataTextField = "departName";
+            ddDepart.DataValueField = "departId";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -50,7 +50,7 @@ namespace LMS.AdminDashboard
                 SqlCommand cmd = new SqlCommand("usp_Tbl_Class_INSERT ", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@className", CClass.Text);
-                cmd.Parameters.AddWithValue("@departmentName", ddDepart.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@departName", ddDepart.SelectedItem.ToString());
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)

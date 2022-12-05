@@ -37,11 +37,11 @@ namespace LMS.AdminDashboard
         protected void loadDepart()
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Department", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_depart", conn);
             cmd.CommandType = CommandType.Text;
             ddDepart.DataSource = cmd.ExecuteReader();
-            ddDepart.DataTextField = "departmentName";
-            ddDepart.DataValueField = "departmentId";
+            ddDepart.DataTextField = "departName";
+            ddDepart.DataValueField = "departId";
             ddDepart.DataBind();
             ddDepart.Items.Insert(0, new ListItem("Select Department", "0"));
             conn.Close();
@@ -50,7 +50,7 @@ namespace LMS.AdminDashboard
         protected void ddDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departmentName=" + "'"+ ddDepart.SelectedItem + "'", conn);
+            SqlCommand cmd = new SqlCommand("select * from Tbl_Class where departName=" + "'"+ ddDepart.SelectedItem + "'", conn);
             cmd.CommandType = CommandType.Text;
             ddClass.DataSource = cmd.ExecuteReader();
             ddClass.DataTextField = "className";
@@ -68,6 +68,7 @@ namespace LMS.AdminDashboard
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@semName", CSem.Text);
                 cmd.Parameters.AddWithValue("@className", ddClass.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@departName", ddDepart.SelectedItem.ToString());
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)

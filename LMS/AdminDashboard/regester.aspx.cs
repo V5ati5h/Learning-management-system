@@ -33,7 +33,7 @@ namespace LMS.AdminDashboard
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_Admin", conn);
+                SqlCommand cmd = new SqlCommand("usp_Admin_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Username", txtadminusername.Text);
                 cmd.Parameters.AddWithValue("@password", txtadminpassword.Text);
@@ -44,7 +44,7 @@ namespace LMS.AdminDashboard
                     libmsg.Visible = true;
                     libmsg.Text = "Record Insert Successfully into the Database";
                     libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    Response.Redirect("defaultSuperAdmin.aspx");
+                    Response.Redirect("default.aspx");
 
                 }
                 conn.Close();

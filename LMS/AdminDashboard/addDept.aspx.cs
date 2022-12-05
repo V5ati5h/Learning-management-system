@@ -34,9 +34,9 @@ namespace LMS.AdminDashboard
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_Tbl_Department_INSERT", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Depart_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@departmentName", Cdisc.Text);
+                cmd.Parameters.AddWithValue("@departName", Cdisc.Text);
                 conn.Open();
                 int k = cmd.ExecuteNonQuery();
                 if (k != 0)

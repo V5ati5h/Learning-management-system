@@ -57,6 +57,11 @@
 
                                 <ItemStyle CssClass="text-center"></ItemStyle>
                             </asp:BoundField>
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departNAme" HeaderText="departNAme" SortExpression="departNamw">
+                                <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
+
+                                <ItemStyle CssClass="text-center"></ItemStyle>
+                            </asp:BoundField>
                             <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="editDate" HeaderText="editDate" SortExpression="editDate">
                                 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
@@ -65,7 +70,7 @@
                         </Columns>
 
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Sem]" UpdateCommand="UPDATE Tbl_Sem SET semName=@semName,className=@className WHERE semID=@semID" DeleteCommand="DELETE Tbl_Sem WHERE semID=@semID"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Sem]" UpdateCommand="UPDATE Tbl_Sem SET semName=@semName,className=@className,departName=@departNAme WHERE semID=@semID" DeleteCommand="DELETE Tbl_Sem WHERE semID=@semID"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

@@ -57,6 +57,11 @@
 
                                 <ItemStyle CssClass="text-center"></ItemStyle>
                             </asp:BoundField>
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="seats" HeaderText="seats" SortExpression="seats">
+                                <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
+
+                                <ItemStyle CssClass="text-center"></ItemStyle>
+                            </asp:BoundField>
                             <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="divName" HeaderText="divName" SortExpression="divName">
                                 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
@@ -67,7 +72,12 @@
 
                                 <ItemStyle CssClass="text-center"></ItemStyle>
                             </asp:BoundField>
-                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="seats" HeaderText="seats" SortExpression="seats">
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="className" HeaderText="className" SortExpression="classNamw">
+                                <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
+
+                                <ItemStyle CssClass="text-center"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departName" HeaderText="departName" SortExpression="departName">
                                 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
                                 <ItemStyle CssClass="text-center"></ItemStyle>
@@ -80,7 +90,7 @@
                         </Columns>
 
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Div]" UpdateCommand="UPDATE Tbl_Div SET divName=@divName,semName=@semName,seats=@seats WHERE divId=@divId" DeleteCommand="DELETE FROM Tbl_Div WHERE divId=@divId"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Div]" UpdateCommand="UPDATE Tbl_Div SET seats=@seats,divName=@divName,semName=@semName,className=@className,departName=@departName WHERE divId=@divId" DeleteCommand="DELETE FROM Tbl_Div WHERE divId=@divId"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

@@ -26,15 +26,15 @@
             <div class="card">
                 <div class="card-header text-light bg-danger text-center fw-bold p-2">Complaints</div>
                 <div class="card-body p-0">
-                    <asp:GridView ID="gridview" CssClass="table table-striped table-bordered table-sm" runat="server" AutoGenerateColumns="False" DataKeyNames="departmentId" DataSourceID="SqlDataSource2" AllowPaging="True">
+                    <asp:GridView ID="gridview" CssClass="table table-striped table-bordered table-sm" runat="server" AutoGenerateColumns="False" DataKeyNames="departId" DataSourceID="SqlDataSource2" AllowPaging="True">
                         <Columns>
                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departmentId" HeaderText="departmentId" InsertVisible="False" ReadOnly="True" SortExpression="departmentId">
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departId" HeaderText="departId" InsertVisible="False" ReadOnly="True" SortExpression="departmentId">
 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
 <ItemStyle CssClass="text-center"></ItemStyle>
                             </asp:BoundField>
-                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName">
+                            <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="departName" HeaderText="departName" SortExpression="departmentName">
 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
 <ItemStyle CssClass="text-center"></ItemStyle>
@@ -47,7 +47,7 @@
                         </Columns>
 
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Department]" DeleteCommand="DELETE FROM Tbl_Department WHERE departmentId=@departmentId" UpdateCommand="UPDATE Tbl_Department set departmentName=@departmentName where departmentId=@departmentId"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:LSMConnectionString1 %>" SelectCommand="SELECT * FROM [Tbl_Depart]" DeleteCommand="DELETE FROM Tbl_Depart WHERE departId=@departId" UpdateCommand="UPDATE Tbl_Department set departName=@departName where departmentId=@departId"></asp:SqlDataSource>
                 </div>
             </div>
         </div>
