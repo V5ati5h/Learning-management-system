@@ -22,15 +22,12 @@ namespace LMS.AdminDashboard
                 if (Session["id"] != null && Session["redirectedFrom"] != null)
                 {
                     loadDepart();
+                    loadData("SELECT * FROM Tbl_Div");
                 }
                 else
                 {
                     Response.Redirect("../adminLogin.aspx");
                 }
-            }
-            if (!IsPostBack)
-            {
-                loadDepart();
             }
         }
 
@@ -101,6 +98,86 @@ namespace LMS.AdminDashboard
             {
                 libmsg.Visible = true;
                 libmsg.Text = ex.Message;
+            }
+        }
+
+        protected void loadData(string queary)
+        {
+            SqlCommand cmd = new SqlCommand(queary, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            SqlDataAdapter dsa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            dsa.Fill(dt);
+            gridview.DataSource = dt;
+            gridview.DataBind();
+            conn.Close();
+        }
+
+        protected void OnRowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gridview.EditIndex = e.NewEditIndex;
+            loadData("SELECT * FROM Tbl_Div");
+        }
+
+        protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            try
+            {
+
+                GridViewRow row = gridview.Rows[e.RowIndex];
+                int dId = Convert.ToInt32(gridview.DataKeys[e.RowIndex].Values[0]);
+                string seat = (row.Cells[2].Controls[0] as TextBox).Text;
+                string divname = (row.Cells[3].Controls[0] as TextBox).Text;
+                string semname = (row.Cells[4].Controls[0] as TextBox).Text;
+                string className = (row.Cells[5].Controls[0] as TextBox).Text;
+                string departName = (row.Cells[6].Controls[0] as TextBox).Text;
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Div_UPDATE", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@dId", dId);
+                cmd.Parameters.AddWithValue("@seat", seat);
+                cmd.Parameters.AddWithValue("@divName", divname);
+                cmd.Parameters.AddWithValue("@semName", semname);
+                cmd.Parameters.AddWithValue("@className", className);
+                cmd.Parameters.AddWithValue("@departName", departName);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                gridview.EditIndex = -1;
+                loadData("SELECT * FROM Tbl_Div");
+
+            }
+            catch (Exception ex)
+            {
+                libmsg.Visible = true;
+                libmsg.Text = ex.Message;
+            }
+        }
+
+        protected void OnRowCancelingEdit(object sender, EventArgs e)
+        {
+            gridview.EditIndex = -1;
+            loadData("SELECT * FROM Tbl_Div");
+        }
+
+        protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = gridview.Rows[e.RowIndex];
+            int dId = Convert.ToInt32(gridview.DataKeys[e.RowIndex].Values[0]);
+            SqlCommand cmd = new SqlCommand("usp_Tbl_Div_DELETE", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@dId", dId);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            loadData("SELECT * FROM Tbl_Div");
+        }
+
+        protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != gridview.EditIndex)
+            {
+                (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
     }

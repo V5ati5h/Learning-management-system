@@ -132,7 +132,7 @@ namespace LMS.TeacherDashboard
                 string dateOfBirth = (row.Cells[14].Controls[0] as TextBox).Text;
                 string username = (row.Cells[15].Controls[0] as TextBox).Text;
                 string password = (row.Cells[16].Controls[0] as TextBox).Text;
-                SqlCommand cmd = new SqlCommand("usp_Student_UPDATE", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Student_UPDATE", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@studentId", studentId);
                 cmd.Parameters.AddWithValue("@grNo", grNo);
@@ -159,7 +159,7 @@ namespace LMS.TeacherDashboard
             }
             catch (Exception ex)
             {
-                
+
             }
         }
 
@@ -171,10 +171,10 @@ namespace LMS.TeacherDashboard
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            GridViewRow row = gridview.Rows[e.RowIndex]; 
+            GridViewRow row = gridview.Rows[e.RowIndex];
             int studentId = Convert.ToInt32(gridview.DataKeys[e.RowIndex].Values[0]);
             string grNo = (row.Cells[2].Controls[0] as TextBox).Text;
-            SqlCommand cmd = new SqlCommand("usp_Student_DELETE", conn);
+            SqlCommand cmd = new SqlCommand("usp_Tbl_Student_DELETE", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@studentId", studentId);
             cmd.Parameters.AddWithValue("@grNo", grNo);
@@ -191,8 +191,7 @@ namespace LMS.TeacherDashboard
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
+protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("addStudent.aspx");
         }

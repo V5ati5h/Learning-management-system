@@ -110,13 +110,13 @@ namespace LMS.TeacherDashboard
                 SqlCommand cmd = new SqlCommand("usp_Tbl_Attandance_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@grNo", row.Cells[0].Text);
-                cmd.Parameters.AddWithValue("@fname", row.Cells[1].Text);
-                cmd.Parameters.AddWithValue("@mname", row.Cells[2].Text);
-                cmd.Parameters.AddWithValue("@lname", row.Cells[3].Text);
-                cmd.Parameters.AddWithValue("@divName", row.Cells[4].Text);
-                cmd.Parameters.AddWithValue("@className", row.Cells[5].Text);
-                cmd.Parameters.AddWithValue("@semName", row.Cells[6].Text);
-                cmd.Parameters.AddWithValue("@departName", row.Cells[7].Text);
+                cmd.Parameters.AddWithValue("@fname", row.Cells[2].Text);
+                cmd.Parameters.AddWithValue("@mname", row.Cells[3].Text);
+                cmd.Parameters.AddWithValue("@lname", row.Cells[4].Text);
+                cmd.Parameters.AddWithValue("@divName", row.Cells[5].Text);
+                cmd.Parameters.AddWithValue("@className", row.Cells[6].Text);
+                cmd.Parameters.AddWithValue("@semName", row.Cells[7].Text);
+                cmd.Parameters.AddWithValue("@departName", row.Cells[8].Text);
                 cmd.Parameters.AddWithValue("@status", stats.SelectedItem.Text);
                 cmd.Parameters.AddWithValue("@date", dateInput.Value);
                 cmd.Parameters.AddWithValue("@staffname", Session["Tid"]);
@@ -124,6 +124,7 @@ namespace LMS.TeacherDashboard
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
+            Response.Redirect("attendence.aspx");
         }
     }
 }

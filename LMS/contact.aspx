@@ -10,6 +10,7 @@
 								<h1 class="display-5 fw-bold ls-tight text-primary">Contact us</h1> </div>
 							<hr />
 							<div class="row">
+								<asp:Label ID="libmsg" runat="server" Visible="false"></asp:Label>
 								<div class="col gap-1">
 									<div class="form-floating mb-3">
 										<asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Your name"></asp:TextBox>
@@ -28,7 +29,7 @@
 										<label for="TextBox4">Type Message</label>
 									</div>
 									<div class="row form-group ms-5 me-5">
-										<asp:Button CssClass="btn btn-primary w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Submit" /> </div>
+										<asp:Button CssClass="btn btn-primary w-20 btn-block btn-lg" ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" /> </div>
 								</div>
 							</div>
 						</div>

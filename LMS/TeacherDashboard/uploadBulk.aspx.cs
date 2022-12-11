@@ -15,7 +15,6 @@ namespace LMS.TeacherDashboard
     {
         SqlConnection conn;
         string FilePath;
-        String sem = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
@@ -87,32 +86,28 @@ namespace LMS.TeacherDashboard
 
         protected void ddDiv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //sem = "usp_" + Convert.ToString(ddDiv.SelectedItem).Replace(" ", "") + "_insert";
-            //libmsg.Visible = true;
-            //libmsg.Text = sem;
         }
         private void InsertCSVRecords(DataTable csvdt)
         {
             try
             {
                 SqlBulkCopy objbulk = new SqlBulkCopy(conn);
-                objbulk.DestinationTableName = sem;
+                objbulk.DestinationTableName = "Tbl_Student";
                 objbulk.ColumnMappings.Add("grNo", "grNo");
                 objbulk.ColumnMappings.Add("rollNo", "rollNo");
-                objbulk.ColumnMappings.Add("firstName", "fname");
-                objbulk.ColumnMappings.Add("middleName", "mname");
-                objbulk.ColumnMappings.Add("lastName", "lname");
-                objbulk.ColumnMappings.Add("depart", Convert.ToString(ddDepart.SelectedItem));
-                objbulk.ColumnMappings.Add("semName", Convert.ToString(ddSem.SelectedItem));
-                objbulk.ColumnMappings.Add("className", Convert.ToString(ddClass.SelectedItem));
+                objbulk.ColumnMappings.Add("image", "image");
+                objbulk.ColumnMappings.Add("firstName", "firstName");
+                objbulk.ColumnMappings.Add("middleName", "middleName");
+                objbulk.ColumnMappings.Add("lastName", "lastName");
                 objbulk.ColumnMappings.Add("divName", Convert.ToString(ddDiv.SelectedItem));
-                objbulk.ColumnMappings.Add("semClass", "semClass");
-                objbulk.ColumnMappings.Add("divName", "divName");
+                objbulk.ColumnMappings.Add("className", Convert.ToString(ddClass.SelectedItem));
+                objbulk.ColumnMappings.Add("semName", Convert.ToString(ddSem.SelectedItem));
+                objbulk.ColumnMappings.Add("departName", Convert.ToString(ddDepart.SelectedItem));
                 objbulk.ColumnMappings.Add("email", "email");
                 objbulk.ColumnMappings.Add("mobile", "mobile");
                 objbulk.ColumnMappings.Add("dateOfBirth", "dob");
-                objbulk.ColumnMappings.Add("uname", "uname");
-                objbulk.ColumnMappings.Add("pass", "pass");
+                objbulk.ColumnMappings.Add("username", "uname");
+                objbulk.ColumnMappings.Add("password", "password");
                 conn.Open();
                 objbulk.WriteToServer(csvdt);
                 Responsehu.Visible = true;

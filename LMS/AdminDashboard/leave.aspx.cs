@@ -67,40 +67,32 @@ namespace LMS.AdminDashboard
             {
 
                 GridViewRow row = GridView1.Rows[e.RowIndex];
-                int studentId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                int leaveId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
                 string grNo = (row.Cells[2].Controls[0] as TextBox).Text;
-                string rollNo = (row.Cells[3].Controls[0] as TextBox).Text;
-                string image = (row.Cells[4].Controls[0] as TextBox).Text;
-                string firstName = (row.Cells[5].Controls[0] as TextBox).Text;
-                string middleName = (row.Cells[6].Controls[0] as TextBox).Text;
-                string lastName = (row.Cells[7].Controls[0] as TextBox).Text;
-                string divName = (row.Cells[8].Controls[0] as TextBox).Text;
-                string className = (row.Cells[9].Controls[0] as TextBox).Text;
-                string semName = (row.Cells[10].Controls[0] as TextBox).Text;
-                string depart = (row.Cells[11].Controls[0] as TextBox).Text;
-                string email = (row.Cells[12].Controls[0] as TextBox).Text;
-                string mobile = (row.Cells[13].Controls[0] as TextBox).Text;
-                string dateOfBirth = (row.Cells[14].Controls[0] as TextBox).Text;
-                string username = (row.Cells[15].Controls[0] as TextBox).Text;
-                string password = (row.Cells[16].Controls[0] as TextBox).Text;
-                SqlCommand cmd = new SqlCommand("usp_Student_UPDATE", conn);
+                string firstName = (row.Cells[3].Controls[0] as TextBox).Text;
+                string middleName = (row.Cells[4].Controls[0] as TextBox).Text;
+                string lastName = (row.Cells[5].Controls[0] as TextBox).Text;
+                string divName = (row.Cells[6].Controls[0] as TextBox).Text;
+                string className = (row.Cells[7].Controls[0] as TextBox).Text;
+                string semName = (row.Cells[8].Controls[0] as TextBox).Text;
+                string depart = (row.Cells[9].Controls[0] as TextBox).Text;
+                string message = (row.Cells[10].Controls[0] as TextBox).Text;
+                string noDays = (row.Cells[11].Controls[0] as TextBox).Text;
+                string reply = (row.Cells[12].Controls[0] as TextBox).Text;
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Leave_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@studentId", studentId);
+                cmd.Parameters.AddWithValue("@leaveId", leaveId);
                 cmd.Parameters.AddWithValue("@grNo", grNo);
-                cmd.Parameters.AddWithValue("@rollNo", rollNo);
-                cmd.Parameters.AddWithValue("@image", image);
-                cmd.Parameters.AddWithValue("@fname", firstName);
-                cmd.Parameters.AddWithValue("@mName", middleName);
-                cmd.Parameters.AddWithValue("@lName", lastName);
-                cmd.Parameters.AddWithValue("@divname", divName);
-                cmd.Parameters.AddWithValue("@classname", className);
-                cmd.Parameters.AddWithValue("@semname", semName);
-                cmd.Parameters.AddWithValue("@departname", depart);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@mobile", mobile);
-                cmd.Parameters.AddWithValue("@dob", dateOfBirth);
-                cmd.Parameters.AddWithValue("@uname", username);
-                cmd.Parameters.AddWithValue("@pass", password);
+                cmd.Parameters.AddWithValue("@rollNo", firstName);
+                cmd.Parameters.AddWithValue("@fName", middleName);
+                cmd.Parameters.AddWithValue("@mName", lastName);
+                cmd.Parameters.AddWithValue("@lName", divName);
+                cmd.Parameters.AddWithValue("@divName", className);
+                cmd.Parameters.AddWithValue("@semName", semName);
+                cmd.Parameters.AddWithValue("@departName", depart);
+                cmd.Parameters.AddWithValue("@message", message);
+                cmd.Parameters.AddWithValue("@nodays", depart);
+                cmd.Parameters.AddWithValue("@reply", reply);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -123,12 +115,10 @@ namespace LMS.AdminDashboard
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
-            int studentId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            string grNo = (row.Cells[2].Controls[0] as TextBox).Text;
-            SqlCommand cmd = new SqlCommand("usp_Student_DELETE", conn);
+            int leaveId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+            SqlCommand cmd = new SqlCommand("usp_Tbl_Feedback_DELETE", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@studentId", studentId);
-            cmd.Parameters.AddWithValue("@grNo", grNo);
+            cmd.Parameters.AddWithValue("@@feedBackId", leaveId);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -141,11 +131,6 @@ namespace LMS.AdminDashboard
             {
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("addStudent.aspx");
         }
     }
 }

@@ -38,16 +38,15 @@ namespace LMS.AdminDashboard
             {
                 SqlBulkCopy objbulk = new SqlBulkCopy(conn);
                 objbulk.DestinationTableName = "Tbl_Staff";
-               // objbulk.ColumnMappings.Add("Fid", "Fid");
-                objbulk.ColumnMappings.Add("Fname","Fname");
-                objbulk.ColumnMappings.Add("Mname","Mname");
-                objbulk.ColumnMappings.Add("Lname","Lname");
-                objbulk.ColumnMappings.Add("Mobile","Mobile");
-                objbulk.ColumnMappings.Add("Email","Email");
-                objbulk.ColumnMappings.Add("Username","Username");
-                objbulk.ColumnMappings.Add("Password","Password");
-                objbulk.ColumnMappings.Add("Did","Did");
-                objbulk.ColumnMappings.Add("deptname","deptname");
+                objbulk.ColumnMappings.Add("firstName", "firstName");
+                objbulk.ColumnMappings.Add("middleName", "middleName");
+                objbulk.ColumnMappings.Add("lastName", "lastName");
+                objbulk.ColumnMappings.Add("mobile", "mobile");
+                objbulk.ColumnMappings.Add("email", "email");
+                objbulk.ColumnMappings.Add("username", "username");
+                objbulk.ColumnMappings.Add("password", "password");
+                objbulk.ColumnMappings.Add("departId", "departId");
+                objbulk.ColumnMappings.Add("departName", "departName");
                 conn.Open();
                 objbulk.WriteToServer(csvdt);
                 Responsehu.Visible = true;

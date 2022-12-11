@@ -140,7 +140,7 @@
 
 <ItemStyle CssClass="text-center"></ItemStyle>
                                 </asp:BoundField>
-                                <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="createdDate" HeaderText="createdDate" SortExpression="createdDate" >
+                                <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-danger text-capitalize text-light" DataField="editDate" HeaderText="editDate" SortExpression="editDate" >
 <HeaderStyle CssClass="text-center bg-danger text-capitalize text-light"></HeaderStyle>
 
 <ItemStyle CssClass="text-center"></ItemStyle>

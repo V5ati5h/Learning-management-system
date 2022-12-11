@@ -93,16 +93,17 @@ namespace LMS.TeacherDashboard
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_Student_INSERT", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Student_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@grNo", txtAdorGiNo.Text);
                 cmd.Parameters.AddWithValue("@rollNo", txtRollNo.Text);
+                cmd.Parameters.AddWithValue("@image", "");
                 cmd.Parameters.AddWithValue("@fname", txtFirstName.Text);
                 cmd.Parameters.AddWithValue("@mname", txtMiddeletName.Text);
                 cmd.Parameters.AddWithValue("@lname", txtLastName.Text);
-                cmd.Parameters.AddWithValue("@depart", Convert.ToString(ddDepart.SelectedItem));
-                cmd.Parameters.AddWithValue("@semname", Convert.ToString(ddSem.SelectedItem));
-                cmd.Parameters.AddWithValue("@classname", Convert.ToString(ddClass.SelectedItem));
+                cmd.Parameters.AddWithValue("@departName", Convert.ToString(ddDepart.SelectedItem));
+                cmd.Parameters.AddWithValue("@semName", Convert.ToString(ddSem.SelectedItem));
+                cmd.Parameters.AddWithValue("@className", Convert.ToString(ddClass.SelectedItem));
                 cmd.Parameters.AddWithValue("@divName", Convert.ToString(ddDiv.SelectedItem));
                 cmd.Parameters.AddWithValue("@email", txtEmailAddress.Text);
                 cmd.Parameters.AddWithValue("@mobile", txtMobileNo.Text);
