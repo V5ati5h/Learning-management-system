@@ -24,13 +24,13 @@ namespace LMS
         protected global::System.Web.UI.WebControls.Label libmsg;
 
         /// <summary>
-        /// txtEmailBox control.
+        /// txtlogusername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmailBox;
+        protected global::System.Web.UI.WebControls.TextBox txtlogusername;
 
         /// <summary>
         /// RegularExpressionValidator2 control.
@@ -51,13 +51,13 @@ namespace LMS
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
-        /// txtBasswordBox control.
+        /// txtlogpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBasswordBox;
+        protected global::System.Web.UI.WebControls.TextBox txtlogpassword;
 
         /// <summary>
         /// RequiredFieldValidator1 control.

@@ -39,18 +39,8 @@
 						</a>
 					</li>
 					<li class="navitem">
-						<a href="fees.aspx" id="ana"> <i class="fa-solid fa-money-bills"></i>
-							<p class="navitemlabel" id="iconh">Fees</p>
-						</a>
-					</li>
-					<li class="navitem">
 						<a href="notice.aspx" id="ana"> <i class="fa-solid fa-circle-exclamation"></i>
 							<p class="navitemlabel" id="iconh">Notice</p>
-						</a>
-					</li>
-					<li class="navitem">
-						<a href="examination.aspx" id="ana"> <i class="fa-solid fa-flask-vial"></i>
-							<p class="navitemlabel" id="iconh">Examination</p>
 						</a>
 					</li>
 					<li class="navitem" id="umm">

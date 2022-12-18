@@ -2164,9 +2164,8 @@
     <Content Include="js\main.js" />
     <Content Include="StudentDashboard\default.aspx" />
     <Content Include="StudentDashboard\homework.aspx" />
-    <Content Include="StudentDashboard\fees.aspx" />
     <Content Include="StudentDashboard\notice.aspx" />
-    <Content Include="StudentDashboard\examination.aspx" />
+    <Content Include="StudentDashboard\profile.aspx" />
     <Content Include="TeacherDashboard\default.aspx" />
     <Content Include="TeacherDashboard\students.aspx" />
     <Content Include="TeacherDashboard\assignment.aspx" />
@@ -2177,6 +2176,7 @@
     <Content Include="TeacherDashboard\logout.aspx" />
     <Content Include="TeacherDashboard\attendence.aspx" />
     <Content Include="TeacherDashboard\addAttendence.aspx" />
+    <Content Include="TeacherDashboard\addAssignment.aspx" />
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
     <Content Include="about.aspx" />
@@ -2334,26 +2334,12 @@
     <Compile Include="StudentDashboard\homework.aspx.designer.cs">
       <DependentUpon>homework.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentDashboard\fees.aspx.cs">
-      <DependentUpon>fees.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StudentDashboard\fees.aspx.designer.cs">
-      <DependentUpon>fees.aspx</DependentUpon>
-    </Compile>
     <Compile Include="StudentDashboard\notice.aspx.cs">
       <DependentUpon>notice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentDashboard\notice.aspx.designer.cs">
       <DependentUpon>notice.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="StudentDashboard\examination.aspx.cs">
-      <DependentUpon>examination.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StudentDashboard\examination.aspx.designer.cs">
-      <DependentUpon>examination.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -2368,6 +2354,13 @@
     </Compile>
     <Compile Include="adminLogin.aspx.designer.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDashboard\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentDashboard\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherDashboard\main.Master.cs">
       <DependentUpon>main.Master</DependentUpon>
@@ -2445,6 +2438,13 @@
     </Compile>
     <Compile Include="TeacherDashboard\addAttendence.aspx.designer.cs">
       <DependentUpon>addAttendence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDashboard\addAssignment.aspx.cs">
+      <DependentUpon>addAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherDashboard\addAssignment.aspx.designer.cs">
+      <DependentUpon>addAssignment.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacherLogin.aspx.cs">
       <DependentUpon>teacherLogin.aspx</DependentUpon>

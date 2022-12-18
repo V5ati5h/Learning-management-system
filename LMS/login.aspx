@@ -16,15 +16,15 @@
 							<div class="row">
 								<div class="col gap-1">
 									<div class="form-floating mb-3">
-										<asp:TextBox CssClass="form-control" ID="txtEmailBox" runat="server" placeholder="Email"></asp:TextBox>
-										<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Visible="false" ErrorMessage="Invallid email" ControlToValidate="txtEmailBox" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-										<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtEmailBox"> </asp:RequiredFieldValidator>
-										<label for="TextBox1">Email address</label>
+										<asp:TextBox CssClass="form-control" ID="txtlogusername" runat="server" placeholder="Email"></asp:TextBox>
+										<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Visible="false" ErrorMessage="Invallid email" ControlToValidate="txtlogusername" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+										<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtlogusername"> </asp:RequiredFieldValidator>
+										<label for="txtlogusername">Email address</label>
 									</div>
 									<div class="form-floating mb-3">
-										<asp:TextBox CssClass="form-control" ID="txtBasswordBox" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-										<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtBasswordBox"> </asp:RequiredFieldValidator>
-										<label for="TextBox2">Password</label>
+										<asp:TextBox CssClass="form-control" ID="txtlogpassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+										<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtlogpassword"> </asp:RequiredFieldValidator>
+										<label for="txtlogpassword">Password</label>
 									</div>
 									<!--
                                 <div class="row align-content-center mb-2">
