@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Drawing;
 using static System.Net.Mime.MediaTypeNames;
 using System.Reflection;
+using System.Net;
 
 namespace LMS.TeacherDashboard
 {
@@ -161,7 +162,6 @@ namespace LMS.TeacherDashboard
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            GridViewRow row = gridview.Rows[e.RowIndex];
             int assignemtId = Convert.ToInt32(gridview.DataKeys[e.RowIndex].Values[0]);
             SqlCommand cmd = new SqlCommand("usp_Tbl_Assignment_DELETE", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -182,6 +182,21 @@ namespace LMS.TeacherDashboard
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("addAssignment.aspx");
+        }
+
+        protected void fileLink_Click(object sender, EventArgs e)
+        {
+            int id = ((GridViewRow)((sender as Control)).NamingContainer).RowIndex;
+            string fileLocation = gridview.Rows[id].Cells[4].Text;
+            string filePath = Server.MapPath("~/" + fileLocation);
+            WebClient webClient = new WebClient();
+            Byte[] fileBiffer = webClient.DownloadData(filePath);
+            if (fileBiffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", fileBiffer.Length.ToString());
+                Response.BinaryWrite(fileBiffer);
+            }
         }
     }
 }

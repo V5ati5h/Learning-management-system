@@ -2548,6 +2548,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AssignmentSubmit\" />
+    <Folder Include="Assignments\" />
     <Folder Include="studentImg\" />
     <Folder Include="teacherImg\" />
   </ItemGroup>

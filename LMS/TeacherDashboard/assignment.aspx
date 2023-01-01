@@ -124,6 +124,11 @@
 
                             <ItemStyle CssClass="text-center"></ItemStyle>
                         </asp:BoundField>
+                        <asp:TemplateField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" HeaderText="View File">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="fileLink" runat="server" text="Open File" OnClick="fileLink_Click"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>

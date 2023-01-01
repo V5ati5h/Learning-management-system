@@ -57,6 +57,10 @@ namespace LMS.StudentDashboard
                     txtusername.Text = dr["username"].ToString();
                     txtpassword.Text = dr["password"].ToString();
                     Session["gr"] = txtGr.Text;
+                    Session["firstName"] = txtfname.Text;
+                    Session["middleName"] = txtmname.Text;
+                    Session["lastName"] = txtlname.Text;
+                    Session["username"] = txtusername.Text;
                     Session["divName"] = txtDiv.Text;
                     Session["semName"] = txtSem.Text;
                     Session["className"] = txtClass.Text;

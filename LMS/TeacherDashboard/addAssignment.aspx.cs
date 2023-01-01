@@ -91,13 +91,17 @@ namespace LMS.TeacherDashboard
 
         protected void insertData(object sender, EventArgs e)
         {
+            String fname = fileUpload.FileName;
+            String floc = "Assignments/";
+            String fpath = System.IO.Path.Combine(floc, fname).Replace("TeacherDashboard\\","");
+            fileUpload.SaveAs(MapPath(fpath).Replace("TeacherDashboard\\", ""));
             try
             {
                 SqlCommand cmd = new SqlCommand("usp_Tbl_Assignment_INSERT", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@title", txtAdorGiNo.Text);
                 cmd.Parameters.AddWithValue("@details", description.Text);
-                cmd.Parameters.AddWithValue("@file", "");
+                cmd.Parameters.AddWithValue("@file", fpath);
                 cmd.Parameters.AddWithValue("@endDate", endDate.Value);
                 cmd.Parameters.AddWithValue("@assignDate", assignDate.Value);
                 cmd.Parameters.AddWithValue("@staffName", Session["Tid"]);

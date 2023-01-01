@@ -66,8 +66,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-floating mb-3">
-                                        <input type="file" class="form-control" id="fileupload" runat="server" placeholder="End Date" />
-                                        <label for="txtSearch">End Date</label>
+                                        <asp:FileUpload class="form-control" ID="fileUpload" runat="server" placeholder="upload file" />
+                                        <label for="fileUpload">Upload file</label>
                                     </div>
                                 </div>
                             </div>

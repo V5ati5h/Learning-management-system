@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Reflection.Emit;
 
 namespace LMS.AdminDashboard
 {
@@ -51,13 +54,13 @@ namespace LMS.AdminDashboard
             SqlDataAdapter dsa = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             dsa.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+            gridview.DataSource = dt;
+            gridview.DataBind();
             conn.Close();
         }
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
-            GridView1.EditIndex = e.NewEditIndex;
+            gridview.EditIndex = e.NewEditIndex;
             loadData(dou);
         }
 
@@ -66,8 +69,8 @@ namespace LMS.AdminDashboard
             try
             {
 
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-                int leaveId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                GridViewRow row = gridview.Rows[e.RowIndex];
+                int leaveId = Convert.ToInt32(gridview.DataKeys[e.RowIndex].Values[0]);
                 string grNo = (row.Cells[2].Controls[0] as TextBox).Text;
                 string firstName = (row.Cells[3].Controls[0] as TextBox).Text;
                 string middleName = (row.Cells[4].Controls[0] as TextBox).Text;
@@ -79,24 +82,24 @@ namespace LMS.AdminDashboard
                 string message = (row.Cells[10].Controls[0] as TextBox).Text;
                 string noDays = (row.Cells[11].Controls[0] as TextBox).Text;
                 string reply = (row.Cells[12].Controls[0] as TextBox).Text;
-                SqlCommand cmd = new SqlCommand("usp_Tbl_Leave_INSERT", conn);
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Leave_UPDATE", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@leaveId", leaveId);
-                cmd.Parameters.AddWithValue("@grNo", grNo);
-                cmd.Parameters.AddWithValue("@rollNo", firstName);
-                cmd.Parameters.AddWithValue("@fName", middleName);
-                cmd.Parameters.AddWithValue("@mName", lastName);
-                cmd.Parameters.AddWithValue("@lName", divName);
-                cmd.Parameters.AddWithValue("@divName", className);
-                cmd.Parameters.AddWithValue("@semName", semName);
-                cmd.Parameters.AddWithValue("@departName", depart);
+                cmd.Parameters.AddWithValue("@lId", leaveId);
+                cmd.Parameters.AddWithValue("@grno", grNo);
+                cmd.Parameters.AddWithValue("@fname", firstName);
+                cmd.Parameters.AddWithValue("@mname", middleName);
+                cmd.Parameters.AddWithValue("@lname", lastName);
+                cmd.Parameters.AddWithValue("@divname", divName);
+                cmd.Parameters.AddWithValue("@classname", className);
+                cmd.Parameters.AddWithValue("@semname", semName);
+                cmd.Parameters.AddWithValue("@departname", depart);
                 cmd.Parameters.AddWithValue("@message", message);
-                cmd.Parameters.AddWithValue("@nodays", depart);
-                cmd.Parameters.AddWithValue("@reply", reply);
+                cmd.Parameters.AddWithValue("@nodays", noDays);
+                cmd.Parameters.AddWithValue("@replay", reply);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                GridView1.EditIndex = -1;
+                gridview.EditIndex = -1;
                 loadData(dou);
 
             }
@@ -108,17 +111,17 @@ namespace LMS.AdminDashboard
 
         protected void OnRowCancelingEdit(object sender, EventArgs e)
         {
-            GridView1.EditIndex = -1;
+            gridview.EditIndex = -1;
             loadData(dou);
         }
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            GridViewRow row = GridView1.Rows[e.RowIndex];
-            int leaveId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            SqlCommand cmd = new SqlCommand("usp_Tbl_Feedback_DELETE", conn);
+            GridViewRow row = gridview.Rows[e.RowIndex];
+            int leaveId = Convert.ToInt32(gridview.DataKeys[e.RowIndex].Values[0]);
+            SqlCommand cmd = new SqlCommand("usp_Tbl_Leave_DELETE", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@@feedBackId", leaveId);
+            cmd.Parameters.AddWithValue("@lId", leaveId);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -127,7 +130,7 @@ namespace LMS.AdminDashboard
 
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridView1.EditIndex)
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != gridview.EditIndex)
             {
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
