@@ -2177,6 +2177,7 @@
     <Content Include="TeacherDashboard\attendence.aspx" />
     <Content Include="TeacherDashboard\addAttendence.aspx" />
     <Content Include="TeacherDashboard\addAssignment.aspx" />
+    <Content Include="TeacherDashboard\checkAssignemnt.aspx" />
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
     <Content Include="about.aspx" />
@@ -2445,6 +2446,13 @@
     </Compile>
     <Compile Include="TeacherDashboard\addAssignment.aspx.designer.cs">
       <DependentUpon>addAssignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDashboard\checkAssignemnt.aspx.cs">
+      <DependentUpon>checkAssignemnt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherDashboard\checkAssignemnt.aspx.designer.cs">
+      <DependentUpon>checkAssignemnt.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacherLogin.aspx.cs">
       <DependentUpon>teacherLogin.aspx</DependentUpon>

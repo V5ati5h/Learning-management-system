@@ -198,5 +198,10 @@ namespace LMS.TeacherDashboard
                 Response.BinaryWrite(fileBiffer);
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("checkAssignemnt.aspx");
+        }
     }
 }

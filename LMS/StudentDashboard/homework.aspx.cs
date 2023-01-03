@@ -88,7 +88,7 @@ namespace LMS.StudentDashboard
                 cmd.Parameters.AddWithValue("@details", txtDetail.Text);
                 cmd.Parameters.AddWithValue("@file", fpath);
                 cmd.Parameters.AddWithValue("@givenBy", loadkar(AssignId.Text));
-                cmd.Parameters.AddWithValue("@reply", "No reply");
+                cmd.Parameters.AddWithValue("@reply", "Pending");
                 cmd.Parameters.AddWithValue("@divName", Session["divName"]);
                 cmd.Parameters.AddWithValue("@className", Session["className"]);
                 cmd.Parameters.AddWithValue("@semName", Session["semName"]);

@@ -15,6 +15,7 @@ namespace LMS.TeacherDashboard
     public partial class WebForm9 : System.Web.UI.Page
     {
         SqlConnection conn;
+        string gridDD;
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
@@ -124,7 +125,6 @@ namespace LMS.TeacherDashboard
                 string className = (row.Cells[7].Controls[0] as TextBox).Text;
                 string semName = (row.Cells[8].Controls[0] as TextBox).Text;
                 string depart = (row.Cells[9].Controls[0] as TextBox).Text;
-                string status = (row.Cells[10].Controls[0] as TextBox).Text;
                 string date = (row.Cells[11].Controls[0] as TextBox).Text;
                 string sname = (row.Cells[12].Controls[0] as TextBox).Text;
                 SqlCommand cmd = new SqlCommand("usp_Tbl_Attandance_UPDATE", conn);
@@ -138,7 +138,7 @@ namespace LMS.TeacherDashboard
                 cmd.Parameters.AddWithValue("@classname", className);
                 cmd.Parameters.AddWithValue("@semname", semName);
                 cmd.Parameters.AddWithValue("@departname", depart);
-                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@status", gridDD);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@staffname", sname);
                 conn.Open();
@@ -150,7 +150,6 @@ namespace LMS.TeacherDashboard
             }
             catch (Exception ex)
             {
-
             }
         }
 
@@ -184,6 +183,13 @@ namespace LMS.TeacherDashboard
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("addAttendence.aspx");
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList dropDownList = sender as DropDownList;
+            string id = dropDownList.ID;
+            gridDD = dropDownList.SelectedItem.Text;
         }
     }
 }
