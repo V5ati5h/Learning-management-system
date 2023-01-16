@@ -102,6 +102,12 @@ namespace LMS.TeacherDashboard
             conn.Close();
         }
 
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView.PageIndex = e.NewPageIndex;
+            loadData("SELECT grNo,rollNo,firstName,middleName,lastName,divName,className,semName,departName FROM Tbl_Student WHERE divName=" + "'" + ddDiv.SelectedItem + "' and semName=" + "'" + ddSem.SelectedItem + "'" + " and className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'");
+        }
+
         protected void AtdSubmit_Click(object sender, EventArgs e)
         {
             foreach (GridViewRow row in GridView.Rows)

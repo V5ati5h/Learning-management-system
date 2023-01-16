@@ -21,7 +21,7 @@ namespace LMS.AdminDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Aid"] != null && Session["redirectedFrom"] != null)
                 {
                     loadDepart();
                     Session["redirectedFrom"] = "Dashboard";
@@ -104,6 +104,12 @@ namespace LMS.AdminDashboard
             conn.Close();
         }
 
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+            loadData("SELECT * FROM Tbl_Student WHERE divName=" + "'" + ddDiv.SelectedItem + "' and semName=" + "'" + ddSem.SelectedItem + "'" + " and className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'");
+        }
+
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             gridview.EditIndex = e.NewEditIndex;
@@ -159,7 +165,8 @@ namespace LMS.AdminDashboard
             }
             catch (Exception ex)
             {
-
+                erLabl.Visible = false;
+                erLabl.Text = ex.Message;
             }
         }
 

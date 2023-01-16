@@ -28,7 +28,6 @@ namespace LMS.StudentDashboard
                     totalPresent.Text = loadkar("Present");
                     totalAbesnt.Text = loadkar("Absent");
                     totalLeave.Text = loadkar("Leave");
-                    loadData("select * from Tbl_Leave");
                 }
                 else
                 {
@@ -37,17 +36,7 @@ namespace LMS.StudentDashboard
             }
         }
 
-        protected void loadData(string queary)
-        {
-            SqlCommand cmd = new SqlCommand(queary, conn);
-            conn.Open();
-            SqlDataAdapter dsa = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            dsa.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
-            conn.Close();
-        }
+        
 
         protected String loadkar(String status)
         {
@@ -60,18 +49,7 @@ namespace LMS.StudentDashboard
             return tect;
         }
 
-        protected void ddMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddMain.SelectedIndex == 0)
-            {
-                dou = "select * from Tbl_Leave";
-            }
-            else
-            {
-                dou = "select * from Tbl_Leave where reply=" + "'" + ddMain.SelectedItem + "'";
-            }
-            loadData(dou);
-        }
+        
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -92,33 +70,7 @@ namespace LMS.StudentDashboard
 
             }
             conn.Close();
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            SqlCommand cmd = new SqlCommand("usp_Tbl_Leave_INSERT", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@grNo", Session["gr"]);
-            cmd.Parameters.AddWithValue("@fName", Session["firstName"]);
-            cmd.Parameters.AddWithValue("@mName", Session["middleName"]);
-            cmd.Parameters.AddWithValue("@lName", Session["lastName"]);
-            cmd.Parameters.AddWithValue("@divName", Session["divName"]);
-            cmd.Parameters.AddWithValue("@semName", Session["semName"]);
-            cmd.Parameters.AddWithValue("@className", Session["className"]);
-            cmd.Parameters.AddWithValue("@departName", Session["dipartName"]);
-            cmd.Parameters.AddWithValue("@message", txtMess.Text);
-            cmd.Parameters.AddWithValue("@nodays", txtNoOfDays.Text);
-            cmd.Parameters.AddWithValue("@replay", "No reply");
-            conn.Open();
-            int k = cmd.ExecuteNonQuery();
-            if (k != 0)
-            {
-                libmsg.Visible = true;
-                libmsg.Text = "Sent Successfully";
-                libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-
-            }
-            conn.Close();
+            Response.Redirect("default.aspx");
         }
     }
 }

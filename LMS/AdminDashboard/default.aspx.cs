@@ -22,16 +22,30 @@ namespace LMS.AdminDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Aid"] != null && Session["redirectedFrom"] != null)
                 {
 
                     loadData("SELECT * FROM Tbl_Complaints");
+                    totalFeed.Text = loadkar("Tbl_Contact");
+                    totalStud.Text = loadkar("Tbl_Student");
+                    totalStaf.Text = loadkar("Tbl_Staff");
+                    totalComp.Text = loadkar("Tbl_Complaints");
                 }
                 else
                 {
                     Response.Redirect("../adminLogin.aspx");
                 }
             }
+        }
+
+        protected String loadkar(String txt)
+        {
+            String tect;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM " + txt , conn);
+            tect = Convert.ToString(cmd.ExecuteScalar());
+            conn.Close();
+            return tect;
         }
 
         protected void AddDepart_Click(object sender, EventArgs e)
@@ -70,6 +84,12 @@ namespace LMS.AdminDashboard
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             gridview.EditIndex = e.NewEditIndex;
+            loadData("SELECT * FROM Tbl_Complaints");
+        }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
             loadData("SELECT * FROM Tbl_Complaints");
         }
 

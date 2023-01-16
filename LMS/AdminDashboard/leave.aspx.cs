@@ -22,7 +22,7 @@ namespace LMS.AdminDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Aid"] != null && Session["redirectedFrom"] != null)
                 {
                     loadData("select * from Tbl_Leave");
                 }
@@ -57,6 +57,11 @@ namespace LMS.AdminDashboard
             gridview.DataSource = dt;
             gridview.DataBind();
             conn.Close();
+        }
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+            loadData(dou);
         }
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {

@@ -50,14 +50,12 @@
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtdept" runat="server" placeholder="Department Number"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtdept"></asp:RequiredFieldValidator>
 											<label for="txtdept">Department no</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtdeptname" runat="server" placeholder="Department Name"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ControlToValidate="txtdeptname"></asp:RequiredFieldValidator>
 											<label for="txtdeptname">Department Name</label>
 										</div>
 									</div>
@@ -73,21 +71,18 @@
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtlname" runat="server" placeholder="Last Name"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtlname"> </asp:RequiredFieldValidator>
 											<label for="txtlname">Last Name</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtfname" runat="server" placeholder="Father Name"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtfname"> </asp:RequiredFieldValidator>
 											<label for="txtfname">First Name</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtmname" runat="server" placeholder="Mother Name"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtmname"> </asp:RequiredFieldValidator>
 											<label for="txtmname">Middle Name</label>
 										</div>
 									</div>
@@ -96,8 +91,6 @@
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtemailaddress" runat="server" placeholder="Email Address" TextMode="Email"></asp:TextBox>
-											<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Visible="false" ErrorMessage="Invallid email" ControlToValidate="txtemailaddress" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ControlToValidate="txtemailaddress"></asp:RequiredFieldValidator>
 											<label for="txtemailaddress">Email Address</label>
 										</div>
 									</div>
@@ -124,10 +117,6 @@
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtmobileno" runat="server" placeholder="Mobile Number" TextMode="Number"></asp:TextBox>
 											<label for="txtmobileno">Mobile Number</label>
-											<div class="form-helper">
-												<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtmobileno" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-												<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="10 digits required" ControlToValidate="txtmobileno" ForeColor="#CC0000" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-											</div>
 										</div>
 									</div>
 									<!-- <div class="col">
@@ -184,14 +173,12 @@
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtusername" runat="server" placeholder="Username"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ControlToValidate="txtusername"></asp:RequiredFieldValidator>
 											<label for="txtusername">Username</label>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-floating mb-3">
 											<asp:TextBox CssClass="form-control" ID="txtpassword" runat="server" textmode="password" placeholder="Password"></asp:TextBox>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="*" ControlToValidate="txtpassword"></asp:RequiredFieldValidator>
 											<label for="txtpassword">Password</label>
 										</div>
 									</div>

@@ -33,7 +33,7 @@ namespace LMS
                 conn.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    Session["id"] = txtadminlogusername.Text;
+                    Session["Aid"] = txtadminlogusername.Text;
                     Session["redirectedFrom"] = "AdminLogin";
                     Response.Redirect("./AdminDashboard/Default.aspx");
                 }

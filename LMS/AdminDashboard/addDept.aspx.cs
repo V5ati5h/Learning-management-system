@@ -19,7 +19,7 @@ namespace LMS.AdminDashboard
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
             if (!this.IsPostBack)
             {
-                if (Session["id"] != null && Session["redirectedFrom"] != null)
+                if (Session["Aid"] != null && Session["redirectedFrom"] != null)
                 {
                     loadData("SELECT * FROM Tbl_Depart");
                 }
@@ -28,6 +28,26 @@ namespace LMS.AdminDashboard
                     Response.Redirect("../adminLogin.aspx");
                 }
             }
+        }
+
+        protected void AddDepart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addDept.aspx");
+        }
+
+        protected void AddClass_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addClass.aspx");
+        }
+
+        protected void AddSem_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addSem.aspx");
+        }
+
+        protected void AddDiv_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("addDiv.aspx");
         }
 
         protected void DepartSubmit_Click(object sender, EventArgs e)
@@ -68,6 +88,12 @@ namespace LMS.AdminDashboard
             gridview.DataSource = dt;
             gridview.DataBind();
             conn.Close();
+        }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+            loadData("SELECT * FROM Tbl_Depart");
         }
 
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)

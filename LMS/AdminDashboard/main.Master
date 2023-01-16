@@ -58,6 +58,11 @@
 						</a>
 					</li>
 					<li class="navitem">
+						<a href="notice.aspx" id="ana"> <i class="fa-solid fa-envelope" id="iconh"></i>
+							<p class="navitemlabel" id="iconh">Notice</p>
+						</a>
+					</li>
+					<li class="navitem">
 						<a href="leave.aspx" id="ana"> <i class="fa-solid fa-person-chalkboard" id="iconh"></i>
 							<p class="navitemlabel" id="iconh">Leave Reports</p>
 						</a>

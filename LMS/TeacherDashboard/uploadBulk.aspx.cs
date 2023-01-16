@@ -87,102 +87,87 @@ namespace LMS.TeacherDashboard
         protected void ddDiv_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-        private void InsertCSVRecords(DataTable csvdt)
+        private void Bindgrid(DataTable csvdt)
         {
-            try
-            {
-                SqlBulkCopy objbulk = new SqlBulkCopy(conn);
-                objbulk.DestinationTableName = "Tbl_Student";
-                objbulk.ColumnMappings.Add("grNo", "grNo");
-                objbulk.ColumnMappings.Add("rollNo", "rollNo");
-                objbulk.ColumnMappings.Add("image", "image");
-                objbulk.ColumnMappings.Add("firstName", "firstName");
-                objbulk.ColumnMappings.Add("middleName", "middleName");
-                objbulk.ColumnMappings.Add("lastName", "lastName");
-                objbulk.ColumnMappings.Add("divName", Convert.ToString(ddDiv.SelectedItem));
-                objbulk.ColumnMappings.Add("className", Convert.ToString(ddClass.SelectedItem));
-                objbulk.ColumnMappings.Add("semName", Convert.ToString(ddSem.SelectedItem));
-                objbulk.ColumnMappings.Add("departName", Convert.ToString(ddDepart.SelectedItem));
-                objbulk.ColumnMappings.Add("email", "email");
-                objbulk.ColumnMappings.Add("mobile", "mobile");
-                objbulk.ColumnMappings.Add("dateOfBirth", "dob");
-                objbulk.ColumnMappings.Add("username", "uname");
-                objbulk.ColumnMappings.Add("password", "password");
-                conn.Open();
-                objbulk.WriteToServer(csvdt);
-                Responsehu.Visible = true;
-                Responsehu.Text = "Record Insert Successfully into the Database";
-                Responsehu.ForeColor = System.Drawing.Color.CornflowerBlue;
-                conn.Close();
-                FileInfo file = new FileInfo(FilePath);
-                if (file.Exists)
-                {
-                    file.Delete();
-                }
-            }
-            catch (Exception ex)
-            {
-                Responsehu.Visible = true;
-                Responsehu.Text = ex.Message;
-            }
+            GridView1.DataSource = csvdt;
+            GridView1.DataBind();
+            UtDb.Visible = true;
+            UtDb.Enabled = true;
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             try
             {
-                DataTable dt = new DataTable();
-                dt = ReadCsvFile();
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                DataTable tblcsv = new DataTable();
+                tblcsv.Columns.Add("grNo");
+                tblcsv.Columns.Add("rollNo");
+                tblcsv.Columns.Add("firstName");
+                tblcsv.Columns.Add("middleName");
+                tblcsv.Columns.Add("lastName");
+                tblcsv.Columns.Add("email");
+                tblcsv.Columns.Add("mobile");
+                tblcsv.Columns.Add("dateOfBirth");
+                tblcsv.Columns.Add("username");
+                //getting full file path of Uploaded file  
+                String fname = fileUpload.FileName;
+                String floc = "studentBulkFile/";
+                String fpath = System.IO.Path.Combine(floc, fname);
+                fileUpload.SaveAs(MapPath(fpath));
+                //Reading All text  
+                string ReadCSV = File.ReadAllText(MapPath(fpath));
+                //spliting row after new line  
+                foreach (string csvRow in ReadCSV.Split('\n'))
+                {
+                    if (!string.IsNullOrEmpty(csvRow))
+                    {
+                        //Adding each row into datatable  
+                        tblcsv.Rows.Add();
+                        int count = 0;
+                        foreach (string FileRec in csvRow.Split(','))
+                        {
+                            tblcsv.Rows[tblcsv.Rows.Count - 1][count] = FileRec;
+                            count++;
+                        }
+                    }
+                    //Calling Bind Grid Functions
+                    Bindgrid(tblcsv);
+
+                }
             }
             catch (Exception ex)
             {
                 Responsehu.Text = ex.Message;
+                Responsehu.Visible = true;
             }
         }
-        public DataTable ReadCsvFile()
-        {
 
-            DataTable dtCsv = new DataTable();
-            string Fulltext;
-            if (txt_Upload.HasFile)
+        protected void UtDb_Click(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in GridView1.Rows)
             {
-                FilePath = Server.MapPath("\\" + System.DateTime.Now.ToString("ddMMyyyy_hhmmss") + ".csv");
-                txt_Upload.SaveAs(FilePath);
-                using (StreamReader sr = new StreamReader(FilePath))
-                {
-                    while (!sr.EndOfStream)
-                    {
-                        Fulltext = sr.ReadToEnd().ToString();
-                        string[] rows = Fulltext.Split('\n');
-                        for (int i = 0; i < rows.Count() - 1; i++)
-                        {
-                            string[] rowValues = rows[i].Split(',');
-                            {
-                                if (i == 0)
-                                {
-                                    for (int j = 0; j < rowValues.Count(); j++)
-                                    {
-                                        dtCsv.Columns.Add(rowValues[j]);
-                                    }
-                                }
-                                else
-                                {
-                                    DataRow dr = dtCsv.NewRow();
-                                    for (int k = 0; k < rowValues.Count(); k++)
-                                    {
-                                        dr[k] = rowValues[k].ToString();
-                                    }
-                                    dtCsv.Rows.Add(dr);
-                                }
-                            }
-                        }
-                    }
-                }
+                SqlCommand cmd = new SqlCommand("usp_Tbl_Student_INSERT", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@grNo", row.Cells[0].Text);
+                cmd.Parameters.AddWithValue("@rollNo", row.Cells[1].Text);
+                cmd.Parameters.AddWithValue("@image", "");
+                cmd.Parameters.AddWithValue("@fname", row.Cells[2].Text);
+                cmd.Parameters.AddWithValue("@mname", row.Cells[3].Text);
+                cmd.Parameters.AddWithValue("@lname", row.Cells[4].Text);
+                cmd.Parameters.AddWithValue("@departName", Convert.ToString(ddDepart.SelectedItem));
+                cmd.Parameters.AddWithValue("@semName", Convert.ToString(ddSem.SelectedItem));
+                cmd.Parameters.AddWithValue("@className", Convert.ToString(ddClass.SelectedItem));
+                cmd.Parameters.AddWithValue("@divName", Convert.ToString(ddDiv.SelectedItem));
+                cmd.Parameters.AddWithValue("@email", row.Cells[5].Text);
+                cmd.Parameters.AddWithValue("@mobile", row.Cells[6].Text);
+                cmd.Parameters.AddWithValue("@dob", row.Cells[7].Text);
+                cmd.Parameters.AddWithValue("@uname", row.Cells[8].Text);
+                cmd.Parameters.AddWithValue("@pass", "12345");
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
-            InsertCSVRecords(dtCsv);
-            return dtCsv;
+            Response.Redirect("students.aspx");
         }
     }
 }

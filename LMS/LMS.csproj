@@ -81,6 +81,7 @@
     <Content Include="AdminDashboard\feedback.aspx" />
     <Content Include="AdminDashboard\logout.aspx" />
     <Content Include="AdminDashboard\students.aspx" />
+    <Content Include="AdminDashboard\notice.aspx" />
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
@@ -103,6 +104,7 @@
     <Content Include="bootstrap\js\bootstrap.esm.min.js" />
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="AdminDashboard\format\StaffUploadFormet.csv" />
     <None Include="bootstrap\js\popper.min.js.map" />
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="css\sstyle.css" />
@@ -2166,7 +2168,9 @@
     <Content Include="StudentDashboard\homework.aspx" />
     <Content Include="StudentDashboard\notice.aspx" />
     <Content Include="StudentDashboard\profile.aspx" />
+    <Content Include="StudentDashboard\leave.aspx" />
     <Content Include="TeacherDashboard\default.aspx" />
+    <Content Include="TeacherDashboard\img\xlsx.png" />
     <Content Include="TeacherDashboard\students.aspx" />
     <Content Include="TeacherDashboard\assignment.aspx" />
     <Content Include="TeacherDashboard\notice.aspx" />
@@ -2285,6 +2289,13 @@
     <Compile Include="AdminDashboard\students.aspx.designer.cs">
       <DependentUpon>students.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminDashboard\notice.aspx.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\notice.aspx.designer.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -2362,6 +2373,13 @@
     </Compile>
     <Compile Include="StudentDashboard\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDashboard\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentDashboard\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherDashboard\main.Master.cs">
       <DependentUpon>main.Master</DependentUpon>
@@ -2526,7 +2544,6 @@
     <Content Include="materialIcons\MaterialIconsSharp-Regular.otf" />
     <Content Include="materialIcons\MaterialIconsTwoTone-Regular.otf" />
     <Content Include="AdminDashboard\main.Master" />
-    <Content Include="AdminDashboard\format\facultyFormat.csv" />
     <Content Include="bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
     <Content Include="bootstrap\css\bootstrap-grid.rtl.css.map" />
@@ -2548,6 +2565,7 @@
     <Content Include="Site.Master" />
     <Content Include="StudentDashboard\main.Master" />
     <Content Include="TeacherDashboard\main.Master" />
+    <Content Include="TeacherDashboard\formet\StudentsUploadFormet.csv" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2556,9 +2574,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AdminDashboard\staffBulkFile\" />
     <Folder Include="AssignmentSubmit\" />
     <Folder Include="Assignments\" />
     <Folder Include="studentImg\" />
+    <Folder Include="TeacherDashboard\studentBulkFile\" />
     <Folder Include="teacherImg\" />
   </ItemGroup>
   <PropertyGroup>

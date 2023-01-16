@@ -104,6 +104,12 @@ namespace LMS.TeacherDashboard
             conn.Close();
         }
 
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+            loadData("SELECT * FROM Tbl_Student WHERE divName=" + "'" + ddDiv.SelectedItem + "' and semName=" + "'" + ddSem.SelectedItem + "'" + " and className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'");
+        }
+
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             gridview.EditIndex = e.NewEditIndex;
@@ -191,7 +197,7 @@ namespace LMS.TeacherDashboard
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
-protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("addStudent.aspx");
         }

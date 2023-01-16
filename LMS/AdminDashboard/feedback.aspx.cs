@@ -17,7 +17,7 @@ namespace LMS.AdminDashboard
         protected void Page_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["strcon"].ConnectionString);
-            if (Session["id"] != null && Session["redirectedFrom"] != null)
+            if (Session["Aid"] != null && Session["redirectedFrom"] != null)
             {
                 loadData("SELECT * FROM Tbl_Contact");
             }
@@ -38,6 +38,12 @@ namespace LMS.AdminDashboard
             gridview.DataSource = dt;
             gridview.DataBind();
             conn.Close();
+        }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+            loadData("SELECT * FROM Tbl_Contact");
         }
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {

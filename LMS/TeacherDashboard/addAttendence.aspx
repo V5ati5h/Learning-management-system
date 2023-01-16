@@ -69,7 +69,7 @@
                     <asp:Button ID="AtdSubmit" class="btn btn-outline-light" runat="server" Text="Submit" OnClick="AtdSubmit_Click"></asp:Button>
             </div>
             <div class="card-body m-0 p-0">
-                <asp:GridView ID="GridView" CssClass="table table-striped table-bordered table-sm" runat="server" AutoGenerateColumns="False" DataKeyNames="grNo" EmptyDataText="Select from drop down">
+                <asp:GridView ID="GridView" CssClass="table table-striped table-bordered table-sm" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="OnPageIndexChanging" PageSize="25" DataKeyNames="grNo" EmptyDataText="Select from drop down">
                     <Columns>
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="grNo" HeaderText="grNo" SortExpression="grNo"  />
                         <asp:BoundField ItemStyle-CssClass="text-center" HeaderStyle-CssClass="text-center bg-success text-capitalize text-light" DataField="rollNo" HeaderText="rollNo" SortExpression="rollNo" />

@@ -104,6 +104,12 @@ namespace LMS.TeacherDashboard
             conn.Close();
         }
 
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+            loadData("SELECT * FROM Tbl_SAssignment WHERE divName=" + "'" + ddDiv.SelectedItem + "' and semName=" + "'" + ddSem.SelectedItem + "'" + " and className=" + "'" + ddClass.SelectedItem + "'" + " and departName=" + "'" + ddDepart.SelectedItem + "'");
+        }
+
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             gridview.EditIndex = e.NewEditIndex;

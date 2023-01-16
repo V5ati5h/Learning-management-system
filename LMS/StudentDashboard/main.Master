@@ -43,6 +43,11 @@
 							<p class="navitemlabel" id="iconh">Notice</p>
 						</a>
 					</li>
+					<li class="navitem">
+						<a href="leave.aspx" id="ana"> <i class="fa-solid fa-circle-exclamation"></i>
+							<p class="navitemlabel" id="iconh">leave</p>
+						</a>
+					</li>
 					<li class="navitem" id="umm">
 						<a href="default3.aspx" id="ana"> <i class="fa-solid fa-arrow-right-from-bracket"></i>
 							<p class="navitemlabel" id="iconh">Log out</p>
