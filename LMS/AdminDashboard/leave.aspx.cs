@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
-using System.Reflection.Emit;
 
 namespace LMS.AdminDashboard
 {
@@ -28,7 +21,7 @@ namespace LMS.AdminDashboard
                 }
                 else
                 {
-                    Response.Redirect("../adminLogin.aspx");
+                    Response.Redirect("../login.aspx");
                 }
             }
         }

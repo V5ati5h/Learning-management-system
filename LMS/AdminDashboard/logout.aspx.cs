@@ -16,7 +16,7 @@ namespace LMS.AdminDashboard
 
         protected void btn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../adminLogin.aspx");
+            Response.Redirect("../login.aspx");
         }
     }
 }

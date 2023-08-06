@@ -26,7 +26,7 @@ namespace LMS.AdminDashboard
                 }
                 else
                 {
-                    Response.Redirect("../adminLogin.aspx");
+                    Response.Redirect("../login.aspx");
                 }
             }
         }
@@ -92,6 +92,7 @@ namespace LMS.AdminDashboard
 
         protected void DivSubmit_Click(object sender, EventArgs e)
         {
+            if (ddDepart.SelectedItem.ToString() == "" && ddClass.SelectedItem.ToString() == "" && ddSem.SelectedItem.ToString() == "" && CDiv.Text == null && CDivSeats.Text == null )
             try
             {
                 SqlCommand cmd = new SqlCommand("usp_Tbl_Div_INSERT", conn);

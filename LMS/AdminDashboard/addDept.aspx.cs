@@ -25,7 +25,7 @@ namespace LMS.AdminDashboard
                 }
                 else
                 {
-                    Response.Redirect("../adminLogin.aspx");
+                    Response.Redirect("../login.aspx");
                 }
             }
         }
@@ -52,28 +52,35 @@ namespace LMS.AdminDashboard
 
         protected void DepartSubmit_Click(object sender, EventArgs e)
         {
-            try
+            if (Cdisc.Text == null)
             {
-                SqlCommand cmd = new SqlCommand("usp_Tbl_Depart_INSERT", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@departName", Cdisc.Text);
-                conn.Open();
-                int k = cmd.ExecuteNonQuery();
-                if (k != 0)
-                {
-                    libmsg.Visible = true;
-                    libmsg.Text = "Record Insert Successfully into the Database";
-                    libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    Response.Redirect("addDept.aspx");
-
-                }
-                conn.Close();
 
             }
-            catch (Exception ex)
+            else
             {
-                libmsg.Visible = true;
-                libmsg.Text = ex.Message;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("usp_Tbl_Depart_INSERT", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@departName", Cdisc.Text);
+                    conn.Open();
+                    int k = cmd.ExecuteNonQuery();
+                    if (k != 0)
+                    {
+                        libmsg.Visible = true;
+                        libmsg.Text = "Record Insert Successfully into the Database";
+                        libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
+                        Response.Redirect("addDept.aspx");
+
+                    }
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    libmsg.Visible = true;
+                    libmsg.Text = ex.Message;
+                }
             }
         }
 

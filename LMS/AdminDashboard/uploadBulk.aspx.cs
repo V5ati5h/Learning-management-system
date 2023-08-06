@@ -26,7 +26,7 @@ namespace LMS.AdminDashboard
                 }
                 else
                 {
-                    Response.Redirect("../adminLogin.aspx");
+                    Response.Redirect("../login.aspx");
                 }
             }
         }

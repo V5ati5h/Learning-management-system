@@ -13,9 +13,5 @@ namespace LMS
         {
 
         }
-        protected void btnLg_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("login.aspx");
-        }
     }
 }

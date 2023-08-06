@@ -2187,8 +2187,6 @@
     <Content Include="about.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="login.aspx" />
-    <Content Include="adminLogin.aspx" />
-    <Content Include="teacherLogin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDashboard\main.Master.cs">
@@ -2360,13 +2358,6 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminLogin.aspx.cs">
-      <DependentUpon>adminLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminLogin.aspx.designer.cs">
-      <DependentUpon>adminLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="StudentDashboard\profile.aspx.cs">
       <DependentUpon>profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2471,13 +2462,6 @@
     </Compile>
     <Compile Include="TeacherDashboard\checkAssignemnt.aspx.designer.cs">
       <DependentUpon>checkAssignemnt.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="teacherLogin.aspx.cs">
-      <DependentUpon>teacherLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="teacherLogin.aspx.designer.cs">
-      <DependentUpon>teacherLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

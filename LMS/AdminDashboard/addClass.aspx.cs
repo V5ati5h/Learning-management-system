@@ -26,7 +26,7 @@ namespace LMS.AdminDashboard
                 }
                 else
                 {
-                    Response.Redirect("../adminLogin.aspx");
+                    Response.Redirect("../login.aspx");
                 }
             }
         }
@@ -66,29 +66,44 @@ namespace LMS.AdminDashboard
 
         protected void ClassSubmit_Click(object sender, EventArgs e)
         {
-            try
+            if (ddDepart.SelectedItem.ToString() == "Select Department" && CClass.Text == null)
             {
-                SqlCommand cmd = new SqlCommand("usp_Tbl_Class_INSERT ", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@className", CClass.Text);
-                cmd.Parameters.AddWithValue("@departName", ddDepart.SelectedItem.ToString());
-                conn.Open();
-                int k = cmd.ExecuteNonQuery();
-                if (k != 0)
-                {
-                    libmsg.Visible = true;
-                    libmsg.Text = "Record Insert Successfully into the Database";
-                    libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    Response.Redirect("addClass.aspx");
+            
+            } else { 
+            if (ddDepart.SelectedItem.ToString() == "Select Department")
+            {
 
-                }
-                conn.Close();
+            } else { 
+            if (CClass.Text == null)
+            {
 
+            } else
+            {
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("usp_Tbl_Class_INSERT ", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@className", CClass.Text);
+                            cmd.Parameters.AddWithValue("@departName", ddDepart.SelectedItem.ToString());
+                            conn.Open();
+                            int k = cmd.ExecuteNonQuery();
+                            if (k != 0)
+                            {
+                                libmsg.Visible = true;
+                                libmsg.Text = "Record Insert Successfully into the Database";
+                                libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
+
+                            }
+                            conn.Close();
+                            Response.Redirect("addClass.aspx");
+                        }
+                        catch (Exception ex)
+                        {
+                            libmsg.Visible = true;
+                            libmsg.Text = ex.Message;
+                        }
+                    }
             }
-            catch (Exception ex)
-            {
-                libmsg.Visible = true;
-                libmsg.Text = ex.Message;
             }
         }
 

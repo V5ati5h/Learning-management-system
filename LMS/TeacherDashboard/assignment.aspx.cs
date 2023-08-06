@@ -30,7 +30,7 @@ namespace LMS.TeacherDashboard
                 }
                 else
                 {
-                    Response.Redirect("../teacherLogin.aspx");
+                    Response.Redirect("../login.aspx");
                 }
             }
         }
