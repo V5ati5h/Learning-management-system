@@ -92,33 +92,39 @@ namespace LMS.AdminDashboard
 
         protected void DivSubmit_Click(object sender, EventArgs e)
         {
-            if (ddDepart.SelectedItem.ToString() == "" && ddClass.SelectedItem.ToString() == "" && ddSem.SelectedItem.ToString() == "" && CDiv.Text == null && CDivSeats.Text == null )
-            try
+            if (ddDepart.SelectedItem.ToString() == "" && ddClass.SelectedItem.ToString() == "" && ddSem.SelectedItem.ToString() == "" && CDiv.Text == null && CDivSeats.Text == null)
             {
-                SqlCommand cmd = new SqlCommand("usp_Tbl_Div_INSERT", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@divName", CDiv.Text);
-                cmd.Parameters.AddWithValue("@seat", CDivSeats.Text);
-                cmd.Parameters.AddWithValue("@semName", ddSem.SelectedItem.ToString());
-                cmd.Parameters.AddWithValue("@className", ddClass.SelectedItem.ToString());
-                cmd.Parameters.AddWithValue("@departName", ddDepart.SelectedItem.ToString());
-                conn.Open();
-                int k = cmd.ExecuteNonQuery();
-                if (k != 0)
+                Response.Write("<script>alert('Cannot enter empty value');</script>");
+            } else
+            {
+
+                try
                 {
-                    libmsg.Visible = true;
-                    libmsg.Text = "Record Insert Successfully into the Database";
-                    libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
-                    Response.Redirect("addDiv.aspx");
+                    SqlCommand cmd = new SqlCommand("usp_Tbl_Div_INSERT", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@divName", CDiv.Text);
+                    cmd.Parameters.AddWithValue("@seat", CDivSeats.Text);
+                    cmd.Parameters.AddWithValue("@semName", ddSem.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@className", ddClass.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@departName", ddDepart.SelectedItem.ToString());
+                    conn.Open();
+                    int k = cmd.ExecuteNonQuery();
+                    if (k != 0)
+                    {
+                        libmsg.Visible = true;
+                        libmsg.Text = "Record Insert Successfully into the Database";
+                        libmsg.ForeColor = System.Drawing.Color.CornflowerBlue;
+                        Response.Redirect("addDiv.aspx");
+
+                    }
+                    conn.Close();
 
                 }
-                conn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                libmsg.Visible = true;
-                libmsg.Text = ex.Message;
+                catch (Exception ex)
+                {
+                    libmsg.Visible = true;
+                    libmsg.Text = ex.Message;
+                }
             }
         }
 

@@ -69,6 +69,15 @@ namespace LMS.AdminDashboard
         protected global::System.Web.UI.WebControls.DropDownList ddDepart;
 
         /// <summary>
+        /// rfvDepart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDepart;
+
+        /// <summary>
         /// CClass control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace LMS.AdminDashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CClass;
+
+        /// <summary>
+        /// rfvClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClass;
 
         /// <summary>
         /// ClassSubmit control.

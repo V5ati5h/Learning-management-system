@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="col-lg mb-2">
-            <div class="card">
-                <div class="card-header text-center text-light bg-danger fw-bold p-2">Course Management</div>
-                <div class="card-body d-grid gap-1">
-                    <asp:Button CssClass="btn btn-danger w-auto btn-block btn-lg" ID="AddDepart" runat="server" Text="Add Department" OnClick="AddDepart_Click" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="AddClass" runat="server" Text="Add Class" OnClick="AddClass_Click" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="AddSem" runat="server" Text="Add Semester" OnClick="AddSem_Click" />
-                    <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="AddDiv" runat="server" Text="Add Division" OnClick="AddDiv_Click" />
+                <div class="card">
+                    <div class="card-header text-center text-light bg-danger fw-bold p-2">Course Management</div>
+                    <div class="card-body d-grid gap-1">
+                        <asp:Button CssClass="btn btn-danger w-auto btn-block btn-lg" ID="AddDepart" runat="server" Text="Add Department" OnClick="AddDepart_Click" />
+                        <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="AddClass" runat="server" Text="Add Class" OnClick="AddClass_Click" />
+                        <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="AddSem" runat="server" Text="Add Semester" OnClick="AddSem_Click" />
+                        <asp:Button CssClass="btn btn-danger w-20 btn-block btn-lg" ID="AddDiv" runat="server" Text="Add Division" OnClick="AddDiv_Click" />
+                    </div>
                 </div>
             </div>
-        </div>
             <div class="card text-center">
                 <div class="card-header text-light bg-danger fw-bold p-2">Add Course</div>
                 <div class="card-body">
@@ -23,12 +23,16 @@
                             <asp:Label CssClass="text-center" ID="libmsg" runat="server" Text="result" Visible="false"></asp:Label>
                             <div class="form-floating mb-3">
                                 <asp:DropDownList CssClass="form-control" ID="ddDepart" runat="server" AutoPostBack="true">
-                                    <asp:ListItem>Select Department</asp:ListItem>
+                                    <asp:ListItem Value="">Select Department</asp:ListItem>
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="rfvDepart" runat="server" ControlToValidate="ddDepart"
+                                    InitialValue="" Display="Dynamic" ForeColor="Red" ErrorMessage="Please select a department"></asp:RequiredFieldValidator>
                                 <label for="ddDepart">Department</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <asp:TextBox CssClass="form-control" ID="CClass" runat="server" placeholder="Class Name"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvClass" runat="server" ControlToValidate="CClass"
+                                    Display="Dynamic" ForeColor="Red" ErrorMessage="Please enter a class name"></asp:RequiredFieldValidator>
                                 <label for="CClass">Class name</label>
                             </div>
                             <div class="row form-group ms-5 me-5 gap-1">

@@ -20,7 +20,7 @@ namespace LMS
 
         protected string login(string who)
         {
-            string qu = "select * from " + who +" where Username = @Username and password = @password";
+            string qu = "select * from " + who +" where username = @Username and password = @password";
             SqlCommand cmd = new SqlCommand(qu, conn);
             cmd.Parameters.AddWithValue("@Username", txtlogusername.Text);
             cmd.Parameters.AddWithValue("@password", txtlogpassword.Text);

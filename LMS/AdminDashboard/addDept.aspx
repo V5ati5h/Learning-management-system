@@ -23,6 +23,8 @@
                             <asp:Label CssClass="text-center" ID="libmsg" runat="server" Text="result" Visible="false"></asp:Label>
                             <div class="form-floating mb-3">
                                 <asp:TextBox CssClass="form-control" ID="Cdisc" runat="server" placeholder="Department Name"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvDepartment" runat="server" ControlToValidate="Cdisc"
+                                    Display="Dynamic" ForeColor="Red" ErrorMessage="Please enter a department name"></asp:RequiredFieldValidator>
                                 <label for="Cdisc">Department Name</label>
                             </div>
                             <div class="row form-group ms-5 me-5 gap-1">
