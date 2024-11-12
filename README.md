@@ -1,5 +1,3 @@
-Here's a GitHub README for your project:
-
 # Academic Course and Training Management System
 
 A .NET and Bootstrap web application designed to streamline the management, reporting, automation, and delivery of academic courses and learning programs for businesses and educational institutions. This management system provides a centralized platform for administering courses, materials, and development programs, enabling users to efficiently track trainee or student progress.
@@ -10,6 +8,14 @@ A .NET and Bootstrap web application designed to streamline the management, repo
 - **Automation and Reporting**: Automate routine tasks and generate detailed reports to track progress and engagement.
 - **Progress Tracking**: Monitor the progress of trainees or students and manage performance data.
 - **Responsive Design**: Built with Bootstrap to ensure an optimal experience across various devices.
+
+## Sample Video
+
+Here’s a quick walkthrough of the system's main features:
+
+[![Watch the video](https://img.youtube.com/vi/AbXxo64z2Tg/0.jpg)](https://youtu.be/AbXxo64z2Tg)
+
+> _Click the image to watch the demo on YouTube._
 
 ## Technology Stack
 
@@ -28,6 +34,7 @@ A .NET and Bootstrap web application designed to streamline the management, repo
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/yourrepository.git
+   ```
 
 2. Navigate to the project directory and build the project:
    ```bash
@@ -54,6 +61,3 @@ We welcome contributions! Please submit a pull request or open an issue for any 
 ## License
 
 This project is licensed under the MIT License.
-```
-
-This README includes an overview, setup instructions, and details about usage and contributions. Adjust the repository URLs, features, or instructions to fit your specific project.
