@@ -33,7 +33,7 @@ Here’s a quick walkthrough of the system's main features:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yourrepository.git
+   git clone https://github.com/V5ati5h/Learning-management-system.git
    ```
 
 2. Navigate to the project directory and build the project:
